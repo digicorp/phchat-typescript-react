@@ -53,6 +53,7 @@ class App extends React.Component {
   }
 
   notify(alert_type, alert_message) {
+    console.log('alert_message :>> ', alert_message)
     if (alert_type === 'alert-success') {
       toast.success(alert_message)
     } else if (alert_type === 'alert-danger') {

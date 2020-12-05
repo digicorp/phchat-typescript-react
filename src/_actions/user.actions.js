@@ -10,7 +10,7 @@ export const userActions = {
 }
 
 function login(email, password) {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(
       request({
         email
@@ -18,13 +18,14 @@ function login(email, password) {
     )
 
     userService.login(email, password).then(
-      user => {
+      (user) => {
+        console.log('user :>> ', user)
         dispatch(success(user))
         history.push('/')
       },
-      error => {
-        dispatch(failure(error))
-        dispatch(alertActions.error(error))
+      (error) => {
+        dispatch(failure('INVALID_CREDENTIALS'))
+        dispatch(alertActions.error('INVALID_CREDENTIALS'))
       }
     )
   }
@@ -59,12 +60,12 @@ function logout() {
 }
 
 function getAll() {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(request())
 
     userService.getAll().then(
-      users => dispatch(success(users)),
-      error => dispatch(failure(error))
+      (users) => dispatch(success(users)),
+      (error) => dispatch(failure(error))
     )
   }
 

@@ -1,5 +1,5 @@
 {
-  "name": "alpha-pi-ai",
+  "name": "ph-chat",
   "version": "1.0.0",
   "repository": {
     "type": "git",
@@ -7,12 +7,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "start-dev": "react-scripts start",
+    "dev": "react-scripts start",
     "test": "webpack-dev-server --open",
     "start": "node server.js --open",
     "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "@availity/reactstrap-validation-select": "^5.3.27",
     "@babel/polyfill": "^7.11.5",
     "fs": "0.0.1-security",
@@ -20,8 +21,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-google-charts": "^3.0.15",
-    "react-image-annotate": "^1.7.0",
-    "react-image-annotation": "^0.9.10",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-toastify": "^5.5.0",
@@ -71,5 +70,17 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

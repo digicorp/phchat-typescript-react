@@ -1,56 +1,116 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-  CardText
-} from 'reactstrap'
+import { Container, Col, Row, CardBody, Card } from 'reactstrap'
+
+import { AvInput, AvForm, AvGroup } from 'availity-reactstrap-validation'
+
+import { DoaminSubDomainMultiSelectlist } from '../_components/Lists'
+import { userService } from '../_services'
 
 class Welcome extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      userId: null,
+      user: null
+    }
   }
 
   componentDidMount() {
     window.scrollTo(0, 0)
+
+    let user = localStorage.getItem('user')
+    if (typeof user === 'string') {
+      user = JSON.parse(user)
+    }
+    const { id: userId = '' } = user
+    this.setState({ userId })
+  }
+
+  handleSearchModelChange = (name, value) => {
+    const { user } = this.state
+
+    this.setState({
+      user: {
+        ...user,
+        [name]: value
+      }
+    })
+  }
+
+  handleChange = (event) => {
+    const { name, value } = event.target
+    const { user } = this.state
+
+    this.setState({
+      user: {
+        ...user,
+        [name]: value
+      }
+    })
+  }
+
+  onKeyDownHandler = async (e) => {
+    if (e.keyCode === 13) {
+      console.log('enter :>> ')
+      const { userId } = this.state
+      const other_data = { id: userId }
+      let { user } = this.state
+      user = { ...other_data, ...user }
+      const response = await userService.sendMessage(user)
+
+      const { id } = response
+      if (id) {
+        console.log('response :>> ', response)
+      }
+      this.myFormRef.reset()
+    }
   }
 
   render() {
+    const { user } = this.state
+
     return (
       <React.Fragment>
         <Container>
-          <div class="container conversations">
-            <div class="row">
-              <section class="col-md-4 conversations-section">
-                <ul class="user-list">
-                  {/* List of users who wrote you or you wrote them. */}
-                  <li class="user-who-wrote-you">
-                    <a
-                      href="#"
-                      data-id="'.$single_username['id'].'"
-                      class="user-list-item"
-                    ></a>
-                    <img
-                      src="assets/avatars/profile-'.$single_username['id'].'.jpg"
-                      alt="'.$username.'\'s avatar"
-                      class="rounded-img header-img"
-                    />
-                    <span class="messager-name">vinit</span>
-                  </li>
-                </ul>
-                {/* Search user */}
-                <div class="search-user">
-                  <div class="list-group list-results"></div>
-                </div>
-              </section>
+          <AvForm
+            onKeyDown={this.onKeyDownHandler}
+            ref={(el) => (this.myFormRef = el)}
+          >
+            <Row className="justify-content-center">
+              <Col md="12">
+                <Card className="pmd-card no-hover-shadow">
+                  <CardBody>
+                    {/* AI Model Parameters  */}
+                    <div className="form-section">
+                      <AvGroup>
+                        <Row>
+                          <DoaminSubDomainMultiSelectlist
+                            onDomainSubDomainChange={
+                              this.handleSearchModelChange
+                            }
+                          />
+                        </Row>
+                      </AvGroup>
+                    </div>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
+            <div className="d-flex justify-content-center">
+              {!!user && (
+                <AvInput
+                  name="message"
+                  required
+                  placeholder="Write your message"
+                  onChange={this.handleChange}
+                />
+              )}
             </div>
-          </div>
+
+            {/****** End Step 3 : Upload data files ******/}
+          </AvForm>
         </Container>
       </React.Fragment>
     )

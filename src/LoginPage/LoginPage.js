@@ -5,7 +5,7 @@ import { userActions } from '../_actions'
 import { submitFailure } from '../_utils/submitFailure'
 import { Form, Button, CustomInput, CardBody, NavLink } from 'reactstrap'
 
-const validate = values => {
+const validate = (values) => {
   const errors = {}
   return errors
 }

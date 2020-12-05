@@ -1,0 +1,1 @@
+web: npm audit fix --force && npm start
