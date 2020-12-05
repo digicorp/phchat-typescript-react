@@ -1,2 +1,11 @@
 # phchat-typescript-react
-This repository contains backend in TypeScript and frontend in React
+
+This repository contains frontend in React
+
+# create and build
+
+`npm run build`
+
+# start script
+
+`npm start`
