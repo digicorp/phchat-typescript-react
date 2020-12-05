@@ -8,5 +8,5 @@ export function routes(app: Express) {
   app.post('/api/appUsers/chats', AppUserController.AppUserPost.event)
   app.post('/api/appUsers/getChats', AppUserController.AppUserPost.listEvent)
   app.post('/api/appUsers/login', AppUserController.AppUserPost.login)
-  app.post('/api/upload', AppUserController.AppUserPost.upload)
+  app.post('/api/appUsers/upload', AppUserController.AppUserPost.upload)
 }
