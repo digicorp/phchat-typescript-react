@@ -5,10 +5,10 @@ import * as morgan from 'morgan'
 import * as cors from 'cors'
 import { json, urlencoded } from 'body-parser'
 import { Express } from 'express'
+import * as path from 'path'
 import * as routes from './routes/_index'
 
-const PORT: number = 3000
-
+const PORT = process.env.PORT || 3000
 /**
  * Root class of your node server.
  * Can be used for basic configurations, for instance starting up the server or registering middleware.
@@ -33,6 +33,7 @@ export class Server {
     this.app.use(json())
     this.app.use(boom())
     this.app.use(morgan('combined'))
+    this.app.use('/', express.static(path.join(__dirname, '/../public')))
     this.app.listen(PORT, () => {
       winston.log('info', `--> Server successfully started at port:: ${PORT} `)
     })
