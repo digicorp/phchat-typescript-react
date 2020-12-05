@@ -50,17 +50,21 @@ curl -X GET -H 'Content-Type: application/json' http://localhost:3000/api/appuse
 
 curl -X POST -H 'Content-Type: application/json' -d '{"email":"foo@bar.com","pwd":"something"}' http://localhost:3000/api/appusers
 
-### POST /api/searchUser
+### POST /api/appusers/search
 
-curl -X POST -H 'Content-Type: application/json' -d '{"name":"win"}' http://localhost:3000/api/searchUser
+curl -X POST -H 'Content-Type: application/json' -d '{"name":"win"}' http://localhost:3000/api/appusers/search
 
-### POST /api/chats
+### POST /api/appUsers/chats
 
-curl -X POST -H 'Content-Type: application/json' -d '{"id":"", "logs":"", "userId": ""}' http://localhost:3000/api/chats
+curl -X POST -H 'Content-Type: application/json' -d '{"id":"", "logs":"", "userId": ""}' http://localhost:3000/api/appusers/chats
 
-### POST /api/chats
+### POST /api/appusers/getchats
 
-curl -X POST -H 'Content-Type: application/json' -d '{"id":""}' http://localhost:3000/api/getChats
+curl -X POST -H 'Content-Type: application/json' -d '{"id":""}' http://localhost:3000/api/appusers/getchats
+
+### POST /api/appusers/upload
+
+curl -X POST -d 'FormData {"file":""}' http://localhost:3000/api/appusers/upload
 
 ## Build
 
