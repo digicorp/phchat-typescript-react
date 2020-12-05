@@ -5,7 +5,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.UUID
       },
-      logs: {
+      message: {
         allowNull: false,
         type: Sequelize.STRING(255)
       },
@@ -17,14 +17,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      userId: {
+      receiver: {
         type: Sequelize.UUID,
         allowNull: false,
         onDelete: 'CASCADE',
         references: {
           model: 'AppUsers',
           key: 'id',
-          as: 'userId'
+          as: 'receiver'
         }
       }
     }),

@@ -48,7 +48,7 @@ curl -X GET -H 'Content-Type: application/json' http://localhost:3000/api/appuse
 
 ### POST /api/appusers
 
-curl -X POST -H 'Content-Type: application/json' -d '{"email":"foo@bar.com","pwd":"something"}' http://localhost:3000/api/appusers
+curl -X POST -H 'Content-Type: application/json' -d '{"name": "Vinit", "email":"vinit.pal@digi-corp.com","pwd":"123456"}' http://localhost:3000/api/appusers
 
 ### POST /api/appusers/search
 
@@ -56,7 +56,7 @@ curl -X POST -H 'Content-Type: application/json' -d '{"name":"win"}' http://loca
 
 ### POST /api/appUsers/chats
 
-curl -X POST -H 'Content-Type: application/json' -d '{"id":"", "logs":"", "userId": ""}' http://localhost:3000/api/appusers/chats
+curl -X POST -H 'Content-Type: application/json' -d '{"id":"", "message":"", "receiver": ""}' http://localhost:3000/api/appusers/chats
 
 ### POST /api/appusers/getchats
 

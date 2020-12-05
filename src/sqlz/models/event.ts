@@ -6,18 +6,18 @@ export class Event extends Model {}
 
 export class EventModel {
   id: string
-  logs: string
+  message: string
   createdAt: Date
   updatedAt: Date
 }
 
 Event.init(
   {
-    logs: STRING(255)
+    message: STRING(255)
   },
   { sequelize, modelName: 'chatHistory' }
 )
 
 Event.belongsTo(AppUser, {
-  foreignKey: 'userId'
+  foreignKey: 'receiver'
 })
