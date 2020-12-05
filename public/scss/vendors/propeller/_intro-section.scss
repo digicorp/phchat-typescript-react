@@ -1,0 +1,341 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): intro-section.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+// Typography
+.pmd-subtitle {
+  	font-size: $card-subtitle-font-size;
+  	line-height: $card-subtitle-line-height;
+	margin-top: -.375rem;
+}
+
+// Intro background images
+.pmd-intro-bg-img {
+  position: relative;
+  width: 100%;
+  background-position: center center;
+  background-color: #000;
+  background-size: cover;
+}
+.pmd-intro-img-overlay:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  content: "";
+  opacity: 0.87;
+  background: transparent linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%) repeat scroll 0 0;
+}
+.pmd-intro-img-overlay:before {
+  background: #000;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+// Intro Gradient images
+.pmd-intro-gradient {
+  position: relative;
+}
+.pmd-intro-gradient:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  content: "";
+  background: #000;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e1112e), to(#0971b2));
+  background: linear-gradient(45deg, #e1112e 0%, #0971b2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1112e', endColorstr='#0971b2', GradientType=0 );
+  opacity: 0.87;
+}
+.pmd-intro-gradient:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.20;
+  z-index: 10;
+}
+
+// Intro container
+.pmd-intro-container {
+	min-height: 600px;
+  	padding: 30px 0;
+  	z-index: 89;
+	position: relative
+}
+
+// Intro Border
+.pmd-intro-container.text-light hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+.pmd-text-before-line, .pmd-text-before-line-dark {
+  position: relative;
+  padding-left: 40px;
+}
+
+// Text before line
+.pmd-text-before-line:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.7);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.pmd-text-before-line-dark:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+// Intro image
+.pmd-intro-img {
+	z-index: 11;
+}
+.pmd-intro-img img {
+	max-width: 100%;
+}
+
+// Intro image wrapper
+.pmd-intro-img-wrapper {
+  position: relative;
+}
+.pmd-intro-img-wrapper .pmd-intro-img {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+	.pmd-intro-img-wrapper.order-3 {
+    	order: 1;
+ 	}
+}
+
+// Circle Animation 
+.pmd-intro-img-wrapper .pmd-animate-circle-wrapper {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.pmd-animate-circle-wrapper {
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  width: 600px;
+  height: 600px;
+}
+.pmd-animate-circle{
+  border: 1px solid #4acc8e;
+  border-radius: 50%;
+  position: absolute;
+}
+.pmd-animate-circle span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4acc8e;
+  position: absolute;
+  left: 50%;
+}
+.pmd-animate-circle-lg {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(23deg);
+  -ms-transform: rotate(23deg);
+  transform: rotate(23deg);
+  -webkit-animation: circle-lg 35s linear infinite;
+  animation: circle-lg 35s linear infinite;
+  opacity: 0.5;
+}
+.pmd-animate-circle-md {
+  width: 500px;
+  top: 50px;
+  height: 500px;
+  left: 50px;
+  -webkit-transform: rotate(-41deg);
+  -ms-transform: rotate(-41deg);
+  transform: rotate(-41deg);
+  -webkit-animation: circle-md 25s linear infinite;
+  animation: circle-md 25s linear infinite;
+  opacity: 0.3;
+}
+.pmd-animate-circle-sm {
+  width: 400px;
+  top: 100px;
+  height: 400px;
+  left: 100px;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-animation: circle-sm 15s linear infinite;
+  animation: circle-sm 15s linear infinite;
+  opacity: 0.2;
+}
+.pmd-animate-circle-lg span.pmd-animate-circle-dot:nth-child(1n) {
+  top: -5px;
+  margin-left: -5px;
+}
+.pmd-animate-circle-lg span.pmd-animate-circle-dot:nth-child(2n) {
+  margin-left: -224px;
+  top: 90px;
+}
+.pmd-animate-circle-lg span.pmd-animate-circle-dot:nth-child(3n) {
+  margin-left: -202px;
+  top: 520px;
+}
+.pmd-animate-circle-lg span.pmd-animate-circle-dot:nth-child(4n) {
+  margin-left: 273px;
+  top: 405px;
+}
+.pmd-animate-circle-md span.pmd-animate-circle-dot:nth-child(1n) {
+  top: -5px;
+  margin-left: -5px;
+}
+.pmd-animate-circle-md span.pmd-animate-circle-dot:nth-child(2n) {
+  margin-left: -201px;
+  top: 90px;
+}
+.pmd-animate-circle-md span.pmd-animate-circle-dot:nth-child(3n) {
+  margin-left: -202px;
+  top: 398px;
+}
+.pmd-animate-circle-md span.pmd-animate-circle-dot:nth-child(4n) {
+  margin-left: 235px;
+  top: 315px;
+}
+.pmd-animate-circle-sm span.pmd-animate-circle-dot:nth-child(1n) {
+  top: -5px;
+  margin-left: -5px;
+}
+.pmd-animate-circle-sm span.pmd-animate-circle-dot:nth-child(2n) {
+  margin-left: -175px;
+  top: 90px;
+}
+.pmd-animate-circle-sm span.pmd-animate-circle-dot:nth-child(3n) {
+  margin-left: -141px;
+  top: 340px;
+}
+.pmd-animate-circle-sm span.pmd-animate-circle-dot:nth-child(4n) {
+  margin-left: 172px;
+  top: 285px;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes circle-lg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Standard syntax */
+@keyframes circle-lg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes circle-md {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Standard syntax */
+@keyframes circle-md {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes circle-sm {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Standard syntax */
+@keyframes circle-sm {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Intro with Content on Both Sides code and example
+@media (max-width: 767px) {
+	.m-text-block {
+		text-align: left !important;
+		margin-top: 40px;
+	}
+}
+
+// Intro Image Circle
+.pmd-img-sm {
+  max-width: 150px;
+  height: 150px;
+}
+.pmd-img-md {
+  max-width: 250px;
+  height: 250px;
+}
+.pmd-img-lg {
+  max-width: 300px;
+  height: 300px;
+}
+
+// intro floating
+.pmd-intro-fab-btn-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 20px auto 0;
+}
+
+// Video Background 
+.pmd-intro-bg-img video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}

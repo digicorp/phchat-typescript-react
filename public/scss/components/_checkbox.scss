@@ -1,0 +1,8 @@
+.pmd-radio {
+    &.subdomain-selection-radio {
+        .custom-control-label {
+            font-weight: $font-weight-normal;
+            font-size: $font-size-base;
+        }
+    }
+}

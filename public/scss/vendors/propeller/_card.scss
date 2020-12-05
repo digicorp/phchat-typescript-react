@@ -1,0 +1,396 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): card.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+.pmd-card { 
+	display: block;
+	padding: 1px 0;
+	margin-bottom: $card-gutter-width;
+	background-color: $card-bg;
+	border: none;
+	@include border-radius($card-border-radius);
+	@include pmd-box-shadow($card-shadow);
+	.card-img-top{
+		border-top-left-radius:$card-border-radius;
+		border-top-right-radius:$card-border-radius;
+	 }
+	.form-horizontal {
+		.form-group {
+			margin-right:inherit;
+			margin-left:inherit;
+		}
+	}
+	.card-body {
+		padding:0 $card-spacer;
+		margin-top: $card-spacer;
+		margin-bottom: $card-spacer;
+		@include media-breakpoint-down(sm) {
+			padding:0 $card-spacer-sm;
+			margin-top: $card-spacer-sm;
+			margin-bottom: $card-spacer-sm;
+		}
+		.pmd-list{
+			.list-group-item{
+				padding-left: 0;
+				padding-right: 0;
+				&.list-group-item-action{
+					padding-left: $list-group-item-padding-x;
+					padding-right: $list-group-item-padding-x;
+				}
+			}
+			// Card list with Bullet Points
+			&.pmd-list-bullet .list-group-item {
+			    padding-left: 1.5rem;
+			}
+		}
+	}
+	.card-header {
+		padding: $card-spacer $card-spacer 0 $card-spacer;
+		margin-bottom: $card-spacer;
+		border-bottom: 1px solid transparent;
+		background-color:transparent;
+		@include media-breakpoint-down(sm) {
+			padding: $card-spacer-sm $card-spacer-sm 0 $card-spacer-sm;
+			margin-bottom: $card-spacer-sm;
+		}
+		@include border-top-radius($card-border-radius);
+		.dropdown {
+			.dropdown-toggle {
+				color: inherit;
+			}
+		}
+		&.pmd-card-border{
+			border-bottom:$modal-header-border-width solid $modal-header-border-color;
+			padding-bottom:$modal-header-padding-y;
+			margin-bottom: 0;
+		}
+	}
+	.card-title {
+	  margin-bottom: 0.5rem;
+	  &:last-child{
+	  	margin-bottom: 0;
+	  }
+	}
+	.card-subtitle {
+	  font-size: $card-subtitle-font-size;
+	  line-height: $card-subtitle-line-height;
+	  color: $card-subtitle-color;
+	  &:first-child {
+		margin-bottom: 0;
+		margin-top: 0;
+	  }
+	  & + .card-subtitle {
+		margin-top:0;
+	  }
+	}
+	&.bg-dark {
+		.card-subtitle { color: $card-dark-subtitle-color}
+	}
+	.card-footer {
+		background-color: transparent;
+	 	border-color:	transparent;
+		padding: 0 $card-spacer $card-spacer $card-spacer;
+		margin-top: $card-spacer;
+		@include media-breakpoint-down(sm) {
+			padding: 0 $card-spacer-sm $card-spacer-sm $card-spacer-sm;
+			margin-top: $card-spacer-sm;
+		}
+		&.pmd-card-border {
+			border-top:$modal-action-border-width solid $modal-action-border-color;
+			padding-top:$modal-header-padding-y;
+			margin-top: 0;
+		}
+		.btn {
+			// padding:$btn-padding-x $card-actions-padding-y;
+			margin-right: $card-actions-spacer-x;
+			margin-left: $card-actions-spacer-x;
+			min-width: inherit;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+			  margin-right: 0;
+			}
+			&.pmd-btn-flat {
+				margin-top:-$btn-padding-y;
+				margin-bottom:-$btn-padding-y;
+				&:first-child {
+					margin-left:-$card-actions-padding-y;
+				}
+			}
+			&.pmd-btn-fab {
+				padding: 0;
+			}
+		}
+	}
+	// Card list border
+	.pmd-list {
+		margin-bottom: 0.5rem;
+    	margin-top: 0.5rem;
+		&.pmd-list-border {
+			.list-group-item {
+				border-right: 0;
+				border-left: 0;
+				border-radius: 0;
+			}
+			&:first-child {
+				.list-group-item {
+					&:first-child{
+						border-top: 0;
+					}
+				}
+			}
+			&:last-child {
+				.list-group-item {
+					&:last-child{
+						border-bottom:0;
+					}
+				}
+			}		
+		}
+	}
+}
+
+.card-deck .pmd-card{
+	display: flow-root;
+}
+
+// Card Icon
+.pmd-card-icon {
+	margin-bottom: $card-spacer;
+}
+
+// Social icon 
+.pmd-icon-top {
+	margin-top: -50%;
+}
+
+.pmd-fab-bottom-center {
+	position: relative;
+	.pmd-icon-circle,
+	.pmd-btn-fab {
+		position: absolute;
+		transform: translateY(50%);
+		left: 0;
+    	right: 0;
+    	margin: auto;
+    	bottom: 0;
+	}
+	&.card-header {
+		margin-top:0;	
+		padding-bottom: 2rem;
+	}
+}
+.pmd-fab-top-center{
+	position: relative;
+	&.card-body {
+		margin-top:0;
+		padding-top: 3rem;
+	}
+	.pmd-icon-circle {
+		position: absolute;
+		transform: translateY(-50%);
+		left: 0;
+    	right: 0;
+    	margin: auto;
+    	top: 0;
+	}
+}
+.pmd-fab-bottom-right {
+	position: relative;
+	.pmd-icon-circle,
+	.pmd-btn-fab {
+		position: absolute;
+		transform: translateY(50%);
+		right: 1rem;
+    	margin: auto;
+    	bottom: 0;
+	}
+	&.card-header {
+		margin-top:0;	
+		padding-bottom: 2rem;
+	}
+}
+
+// Social icon 
+.pmd-social-icon {
+	margin-top: $social-icon-top-margin;
+	a {
+		margin: 0 $social-icon-margin-x;
+		display: inline-flex;
+		justify-content: center;
+		svg {
+			fill: $social-svg-icon-color;
+			width: $social-svg-icon-width;
+		}
+		&:hover svg {
+			fill: $social-svg-icon-hover-color;
+		}
+	}
+}
+
+/* Card info css */
+.pmd-card-info {
+	font-size:$card-info-font-size;
+	color: $card-info-color;
+	padding:$card-info-padding-y 0;
+	border-top:$card-info-border-width solid $card-info-border-color;
+	border-bottom:$card-info-border-width solid $card-info-border-color;
+}
+
+// Card project progress css 
+.pmd-list{
+	&.pmd-list-progress {
+		.list-group-item { 
+			padding-left: $progress-list-group-item-padding-left;
+			width:100%;
+			background-color: $progress-bar-group-item-bg;
+			&:before { 
+				content:""; 
+				width:$progress-bar-width; 
+				height:100%; 
+				background:$progress-bar-bg; 
+				left:0; 
+				position:absolute;
+				left:30px; 
+				top:0;
+				z-index:9;
+			}
+			&:after{
+				content:"";
+				position:absolute;
+				left:25px; 
+				top:0; 
+				bottom:0; 
+				margin:auto; 
+				width:$progress-bar-bullet-width;
+				height:$progress-bar-bullet-height; 
+				border-radius:50%; 
+				background:$progress-bar-bg;
+			}
+			&.list-group-item-success:before,
+			&.list-group-item-success:after {
+				background-color:$progress-bar-success-bg;
+			}
+			&.list-group-item-danger:before,
+			&.list-group-item-danger:after {
+				background-color:$progress-bar-danger-bg;
+			}
+		}
+	}
+}
+
+// Card title border css
+.with-border:after { 
+	content: "";
+	display: block;
+	width: 60px;
+	margin: 20px auto;
+	height: 3px;
+	border-radius: 3px; 
+	background-color: #018af0;
+}
+
+.with-left-border:after{
+	content: "";
+	display: block;
+	width: 60px;
+	margin: 20px 0;
+	height: 3px;
+	border-radius: 3px; 
+	background-color: #018af0;
+}
+
+// Card overlay css
+.pmd-card-overlay {
+	background-color:$pmd-card-overlay-color; 
+	overflow:hidden;
+	.card-title{ 
+		position: absolute;
+		color: $pmd-card-overlay-title-color;
+		top: 0; 
+		left: 0; 
+		right: 0;
+		@include transform-translateY(47%);
+		bottom: 0;
+		text-align: center;
+		z-index: 2;
+		@include transition($transition-base);
+		font-size: $pmd-card-overlay-title-font-size;
+	}
+	img {
+		opacity: $pmd-card-overlay-image-opacity;
+		height: $pmd-card-overlay-image-height;
+		display: block;
+		@include transition($transition-base);
+		min-width: 100%;
+	}
+	&:hover{
+		.card-title{
+			@include transform-translateY(20%);
+		}
+		img{
+			opacity: $pmd-card-overlay-hover-image-opacity;
+			transform: $pmd-card-overlay-hover-image-scale;
+		}
+	}
+}
+.pmd-view-details{
+	padding: 0 $pmd-view-details-padding-x; 
+	text-align: center;
+	color: $pmd-view-details-color;
+	opacity:0;
+	font-size: $pmd-view-details-font-size;
+	position: absolute;
+	bottom: 0;
+	z-index: 100; 
+	left: 0; 
+	right: 0;
+	@include transform-translate($pmd-view-details-translate);
+	@include transition($transition-base);
+	overflow: visible; 
+	margin: 0 auto; 
+	top: 50%;
+	&:before {
+		content: attr(data-title);
+		position: absolute;
+		bottom: $pmd-view-details-before-bottom;
+		@include transform-translate($pmd-view-details-before-translate);
+		color: $pmd-view-details-color;
+	}
+}
+
+// Card hover css 
+// .pmd-card-overlay:hover .card-title{ 
+// 	@include transform-translateY(20%);
+// }
+
+.pmd-card-overlay:hover .pmd-view-details, 
+.pmd-card-overlay .card-title:hover + .pmd-view-details{
+	@include transform-translate($pmd-view-details-hover-translate);
+	opacity: 1;
+}
+
+// .pmd-card-overlay:hover img {
+// 	opacity: $pmd-card-overlay-hover-image-opacity;
+// 	transform: $pmd-card-overlay-hover-image-scale;
+// }
+
+// icon wrap
+.icon-wrap{
+	height: 100px;
+	width: 100px;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+	margin: auto;
+	line-height: 100px;
+	svg {
+		display: inline-block;
+		vertical-align: middle;
+		height: 60px;
+	}
+}

@@ -1,0 +1,85 @@
+.form-control{
+	border-width: $border-width-2;
+	border-color: $border-color;
+	padding: 0.5rem 1rem ;
+	height: calc(1.6em + 1.4rem + 4px);
+	border-radius:$border-radius;
+	color: $textfield-color;
+	resize: none;
+
+	&.form-control-sm {
+		padding:$textfield-outline-no-floating-padding-y-sm $textfield-outline-no-floating-padding-x-sm;
+		height: $textfield-outline-height-sm;
+	}
+	&:focus{
+		border-color:$bg-primary;
+		box-shadow:$no-shadow;
+		color: $textfield-color;
+	}
+	&.was-validated:invalid:focus, &.is-invalid:focus {
+		box-shadow: none;
+	}
+}
+::-webkit-input-placeholder { /* Edge */
+	font-weight: $font-weight-normal;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-weight: $font-weight-normal;
+}
+::placeholder {
+	font-weight: $font-weight-normal;
+}
+.input-group-prepend{
+	margin-right: -$border-width-2;
+}
+
+.input-group-text{
+	border-width: 2px;
+	border-color: $border-color;
+	background-color: transparent;
+	border-right:none;
+	color: $primary;
+	font-weight: $font-weight-semibold;
+	font-size: $font-size-sm;
+	text-transform: uppercase;
+}
+
+.input-group-text{
+	border-width: 2px;
+	border-color: $primary;
+	background-color: $primary;
+	border-right:none;
+	color: pmd-theme-color(primary, light);
+	font-weight: $font-weight-semibold;
+	font-size: $font-size-sm;
+	text-transform: uppercase;
+	&.input-group-icon{
+		font-weight: $font-weight-medium;
+		text-transform: none;
+	}
+}
+
+.text-muted{
+	color:pmd-theme-color(hint, dark) !important;
+	font-weight: $font-weight-medium;
+}
+
+// File Upload
+.pmd-custom-file {
+	height: $textfield-height;
+	margin-bottom: $space16;
+	.custom-file-label {
+		border: solid $textfield-border-height $textfield-border-color !important;
+		border-radius: $textfield-border-radius;
+		padding: $textfield-padding-x $textfield-padding-y;
+		height: $textfield-height;
+		color:$textfield-label-color;
+		@include hover-focus-active {
+			border: solid $textfield-border-height $textfield-border-color !important;
+		}
+		&:after {
+			height: 100%;
+			line-height: 2.2;
+		}
+	}
+}

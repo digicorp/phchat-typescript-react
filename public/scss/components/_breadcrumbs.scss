@@ -1,0 +1,44 @@
+.pmd-breadcrumbs {
+    .breadcrumb {
+        background: none;
+        padding: 0;
+        margin-bottom: 0;
+        .breadcrumb-item {
+            line-height: 1;
+            position: relative;
+            padding: 0 $space8;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-bold;
+
+            &:before {
+                content: '';
+                position: absolute;
+                padding: 0;
+                left: 0;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background-color: $breadcrumb-divider-color;
+            }
+            &:first-child {
+                padding-left: 0;
+                &:before {
+                    content: none;
+                }
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+
+            &.active {
+                color: $breadcrumb-active-text-color;
+            }
+            a {
+                color: $breadcrumb-text-color;
+                &:hover {
+                    color: $breadcrumb-hover-text-color;
+                }
+            }
+        }
+    }
+}

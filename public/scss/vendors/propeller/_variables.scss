@@ -1,0 +1,1075 @@
+// Variables
+
+//
+// Color system
+//
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #333333 !default;
+$black:    #000 !default;
+
+$blue:     	 #4285f4 !default;
+$indigo:   	 #6610f2 !default;
+$purple:   	 #6f42c1 !default;
+$pink:     	 #e83e8c !default;
+$red:      	 #dc3545 !default;
+$orange:   	 #ff5722 !default;
+$yellow:   	 #ffc107 !default;
+$green:    	 #259b24 !default;
+$teal:     	 #20c997 !default;
+$cyan:     	 #03a9f4 !default;
+$green-cyan: #4acc8e !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+$primary:    $blue !default;
+$secondary:  $teal !default;
+$success:    $green !default;
+$info:       $cyan !default;
+$warning:    $yellow !default;
+$danger:     $orange !default;
+$light:      $gray-100 !default;
+$dark:       $gray-800 !default;
+$default:	 $white !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge((
+  "primary":      $primary,
+  "secondary":    $secondary,
+  "success":      $success,
+  "info":         $info,
+  "warning":      $warning,
+  "danger":       $danger,
+  "light":        $light,
+  "dark":         $dark
+), $theme-colors);
+
+// Color system
+$pmd-theme-primary: 	theme-color("primary") !default; // baseline purple, 500 tone
+$pmd-theme-secondary: 	theme-color("secondary") !default;
+$pmd-theme-background: 	$white !default; // White
+
+// Text colors according to light vs dark and text type.
+$pmd-theme-colors: (
+  dark: (
+    primary: 	rgba($black, .87),
+    secondary: 	rgba($black, .54),
+    hint: 		rgba($black, .38),
+    disabled: 	rgba($black, .38),
+    icon: 		rgba($black, .38),
+	hover: 		rgba($black, .075),
+	dividers: 	rgba($black, .12)  
+  ),
+  light: (
+    primary: 	$white,
+    secondary: 	rgba($white, .7),
+    hint: 		rgba($white, .5),
+    disabled: 	rgba($white, .5),
+    icon: 		rgba($white, .5),
+	hover: 		rgba($white, .38),
+	dividers: 	rgba($white, .12)
+  )
+) !default;
+
+$box-shadow-color: 	theme-color("primary") !default;
+
+$pmd-box-shadow: () !default;
+$pmd-box-shadow: map-merge((
+  dark: (
+	z-depth-1: (0 3px 1px -2px rgba($black,.2), 0 2px 2px 0 rgba($black,.14), 0 1px 5px 0 rgba($black,.12)),
+    z-depth-2: (0 3px 5px -1px rgba($black,.2), 0 6px 10px 0 rgba($black,.14), 0 1px 18px 0 rgba($black,.12)),
+	z-depth-3: (0 5px 5px -3px rgba($black,.2), 0 8px 10px 1px rgba($black,.14), 0 3px 14px 2px rgba($black,.12)),
+	z-depth-4: (0 12px 24px -4px rgba($black, 0.2), 0 8px 20px 1px rgba($black, 0.14), 0 6px 12px 0px rgba($black, 0.12)),
+	z-depth-5: (0 16px 28px -4px rgba($black, 0.2), 0 12px 36px 1px rgba($black, 0.14), 0 8px 20px 0px rgba($black, 0.12))
+  ),
+  light: (
+	z-depth-1: (0 3px 1px -2px rgba($black,.12), 0 2px 2px 0 rgba($black,.08)),
+    z-depth-2: (0 3px 5px -1px rgba($black,.12), 0 6px 10px 0 rgba($black,.08)),
+	z-depth-3: (0 5px 5px -3px rgba($black,.12), 0 8px 10px 1px rgba($black,.08)),
+	z-depth-4: (0 12px 24px -4px rgba($black, 0.12), 0 8px 20px 1px rgba($black, 0.08)),
+	z-depth-5: (0 16px 28px -4px rgba($black, 0.12), 0 12px 36px 1px rgba($black, 0.08))
+  )
+), $pmd-box-shadow);
+
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval:      				8% !default;
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 					150 !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: 							$gray-900 !default;
+$yiq-text-light: 							$white !default;
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+) !default;
+
+$space4:  0.25rem !default;
+$space8:  0.5rem  !default;
+$space10: 0.625rem!default;
+$space12: 0.75rem !default;
+$space16: 1rem	  !default;
+$space18: 1.125rem!default;
+$space24: 1.5rem  !default; 
+
+// Body
+$body-bg:       			  				$gray-100 !default;
+$body-color:    			  				$gray-900 !default;
+$text-muted:								pmd-theme-color(secondary, dark) !default;
+
+// Links
+$link-color:            	  				theme-color("primary") !default;
+$link-decoration:       	  				none !default;
+$link-hover-color:      	 				darken($link-color, 15%) !default;
+$link-hover-decoration: 				  	underline !default;
+$link-outline:          	  				none !default;
+
+// Paragraphs
+$paragraph-margin-bottom: 					1rem !default;
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+// Grid containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+$grid-columns:                				12 !default;
+$grid-gutter-width:           				30px !default;
+
+// Components
+$line-height-lg:         	  				1.5 !default;
+$line-height-sm:         	  				1.5 !default;
+
+$border-width: 			 	  				1px !default;
+$border-color: 			 	 				pmd-theme-color(dividers, dark) !default;
+$border-radius:          	  				0.125rem !default;
+$border-radius-lg:       	  				.3rem !default;
+$border-radius-sm:       	  				.2rem !default;
+
+$component-active-color: 	  				$white !default;
+$component-active-bg:    	  				theme-color("primary") !default;
+
+$caret-width:            	  				.3em !default;
+$transition-base:        	  				all .2s ease-in-out !default;
+
+// Fonts
+$font-family-sans-serif:       				Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace:        				"SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:             				$font-family-sans-serif !default;
+
+$font-size-base:               				1rem !default; 
+$font-size-lg:                 				($font-size-base * 1.25) !default;
+$font-size-sm:                 				($font-size-base * .875) !default;
+
+$font-weight: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+  black: 900
+) !default;
+
+$font-weight-light:            				font-weight("light") !default;
+$font-weight-normal:           				font-weight("regular") !default;
+$font-weight-medium:           				font-weight("medium") !default;
+$font-weight-bold:             				font-weight("bold") !default;
+
+$font-weight-base:             				$font-weight-normal !default;
+$line-height-base:             				1.5 !default;
+
+$h1-font-size:                				$font-size-base * 2.5 !default;
+$h2-font-size:                				$font-size-base * 2 !default;
+$h3-font-size:                				$font-size-base * 1.75 !default;
+$h4-font-size:                				$font-size-base * 1.5 !default;
+$h5-font-size:                				$font-size-base * 1.25 !default;
+$h6-font-size:                				$font-size-base !default;
+
+$headings-margin-bottom:       				($spacer / 2) !default;
+$headings-font-family:         				inherit !default;
+$headings-font-weight:         				font-weight("medium") !default;
+$headings-line-height:         				1.2 !default;
+$headings-color:               				inherit !default;
+
+$lead-font-size:               				($font-size-base * 1.25) !default;
+$lead-font-weight:             				font-weight("light") !default;
+$small-font-size:              				80% !default;
+$pmd-caption-font-size :  	   				$font-size-base * 0.75 !default;
+$pmd-caption-letter-spacing:   				.08em !default;
+
+// Material Typo
+$pmd-body:									$font-size-base * .875 !default;
+$pmd-headline:                 				$font-size-base * 1.5 !default;
+$pmd-title:                	   				$font-size-base * 1.25 !default;
+$pmd-subheading2:              				$font-size-base * 1 !default;
+$pmd-subheading1:			   				$font-size-base * .938 !default;
+
+$display4-size:                				2.125rem !default;
+$display4-line-height:						2.5rem  !default;
+$display4-font-weight:						$font-weight-normal !default;
+$display3-size:                				2.8125rem !default;
+$display3-line-height:						3rem  !default;
+$display3-font-weight:						$font-weight-normal !default;
+$display2-size:                				3.5rem !default;
+$display2-line-height:						3.5rem  !default;
+$display2-font-weight:						$font-weight-normal !default;
+$display2-letter-spacing:         			-.02em !default;
+$display1-size:                				6rem !default;
+$display1-line-height:						7rem !default;
+$display1-font-weight:						$font-weight-light !default;
+$display1-letter-spacing:         			-.04em !default;
+$display-color:                				pmd-theme-color(secondary, dark) !default;
+$display-line-height: 		   				$headings-line-height !default;
+
+$pmd-headline-font-weight:					$font-weight-normal !default;
+$pmd-headline-line-height:					inherit !default;
+$pmd-title-font-weight:						$font-weight-normal !default;
+$pmd-title-line-height:						inherit !default;	
+$pmd-subheading2-font-weight:				$font-weight-normal !default;
+$pmd-subheading2-line-height:				inherit !default;	
+$pmd-subheading1-font-weight:				$font-weight-normal !default;
+$pmd-subheading1-line-height:				inherit !default;
+
+// Tables
+$table-cell-padding:            			.75rem !default;
+$table-cell-padding-sm:         			.25rem !default;
+$table-caption-color:						$text-muted !default;
+$table-cell-line-height:	    			$line-height-base !default;
+
+$table-bg:                      			$white !default;
+$table-accent-bg:               			rgba($black,.05) !default;
+$table-hover-bg:                			pmd-theme-color(hover, dark) !default;
+$table-active-bg:               			$table-hover-bg !default;
+
+$table-border-width:            			$border-width !default;
+$table-border-color:            			$border-color !default; // #eceeef
+
+$table-head-bg:                 			theme-color("dark") !default;
+$table-head-color:              			pmd-theme-color(secondary, dark) !default;
+$table-head-font-size:						$font-size-sm !default;
+$table-head-font-weight:					font-weight("regular") !default;
+
+$table-dark-bg:              				theme-color("dark") !default;
+$table-dark-accent-bg:       				rgba($white, .02) !default;
+$table-dark-hover-bg:        				pmd-theme-color(hover, light) !default;
+$table-dark-border-color:    				pmd-theme-color(dividers, light) !default;
+$table-dark-color:           				$body-bg !default;
+$table-dark-head-color:						pmd-theme-color(secondary, light) !default;
+$table-dark-head-bg:						theme-color("dark") !default;
+
+$table-light-head-color:					pmd-theme-color(secondary, dark) !default;
+$table-light-head-bg:						theme-color("light") !default;
+
+$child-table-bg:							$white !default;
+
+$table-card-box-shadow:						pmd-box-shadow(z-depth-1, dark) !default;
+
+// Icons
+$material-icons-xs: 						18px !default;
+$material-icons-sm: 						24px !default;
+$material-icons-md: 						36px !default;
+$material-icons-lg: 						48px !default;
+$material-icons-xl:							72px !default;
+
+$pmd-icon-circle-size:          			56px !default;
+$pmd-icon-circle-size-xs: 					32px !default;
+$pmd-icon-circle-size-sm: 					40px !default;
+$pmd-icon-circle-size-md: 					64px !default;
+$pmd-icon-circle-size-lg: 					80px !default;
+$pmd-icon-circle-size-xl: 					96px !default;
+
+$material-icons-dark-color:					rgba($black, 0.87) !default;
+$material-icons-dark-inactive-color: 		rgba($black, 0.38) !default;
+$material-icons-light-color:				rgba($white, 1) !default;
+$material-icons-light-inactive-color:		rgba($white, 0.5) !default;
+
+// Buttons
+
+$btn-hover-background:        		#e5e5e5;
+
+$btn-font-size:						$font-size-sm !default;
+$btn-padding-y:               		0.625rem !default;
+$btn-padding-x:               		.75rem !default;
+$btn-line-height:             		1.1 !default;
+$btn-focus-width:					0.2rem !default;
+
+$btn-padding-y-sm:            		.25rem !default;
+$btn-padding-x-sm:            		.75rem !default;
+$btn-line-height-sm:          		$line-height-sm !default;
+$btn-font-size-sm:			  		0.75rem !default; // New created 
+
+$btn-padding-y-lg:            		.625rem !default;
+$btn-padding-x-lg:            		1rem !default;
+$btn-line-height-lg:          		1.3 !default;
+$btn-font-size-lg:			  		$font-size-lg !default; //  New created
+$btn-border-width:            		$border-width !default;
+$btn-font-weight:             		$font-weight-normal !default;
+
+$btn-border-radius:           		$border-radius !default;
+$btn-border-radius-lg:        		$border-radius !default;
+$btn-border-radius-sm:        		$border-radius !default;
+
+$btn-fab-size:						56px !default; 
+$btn-fab-size-lg:					78px !default;
+$btn-fab-size-sm:					40px !default;
+$btn-fab-size-xs:					30px !default;
+
+$btn-raised-box-shadow:				pmd-box-shadow(z-depth-1, dark) !default;
+$btn-raised-focus-box-shadow:		pmd-box-shadow(z-depth-2, dark) !default;
+
+$btn-transition:              		color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+$btn-icon-margin-right:   			$space8 !default;
+
+$btn-tooltip-bg:          			pmd-theme-color(hint, dark) !default;
+$btn-tooltip-color:       			$white !default;
+
+$btn-check-transition:    			$transition-base !default;
+$btn-check-rotate-before: 			120deg;
+$btn-check-rotate-after:  			360deg;
+$btn-check-scale-before:  			0;
+$btn-check-scale-after:   			1;
+
+$gradient-color:          			pmd-theme-color(primary, light) !default;
+
+$btn-gradient-primary:              theme-color("primary") !default;
+$btn-gradient-secondary:            theme-color("secondary") !default;
+$btn-gradient-hover:                $btn-gradient-primary !default;
+$btn-gradient-line-height:          (1.2 + 0.05) !default;
+
+$btn-gradient:                      90deg,$btn-gradient-primary 0,$btn-gradient-secondary 100% !default;
+$btn-gradient-vertical:             180deg,$btn-gradient-primary 0,$btn-gradient-secondary 100% !default;
+$btn-gradient-diagonal:             45deg,$btn-gradient-primary 0,$btn-gradient-secondary 100% !default;
+$btn-diagonal-reverse:              -45deg,$btn-gradient-primary 0,$btn-gradient-secondary 100% !default;
+$btn-gradient-radial:               ellipse at center,$btn-gradient-primary 0,$btn-gradient-secondary 100% !default;
+
+
+// Textfield
+$label-margin-bottom:               		.5rem !default;
+
+$form-state-theme-colors: 					map-remove($theme-colors, "default", "primary", "secondary", "info", "danger", "light", "dark", "inverse", "information");
+$textfield-transition:                  	transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s !default;
+$textfield-focused-height:					2px !default;
+$textfield-focused-bg:						theme-color("primary") !default;
+
+$textfield-padding-y:						0.375rem !default;
+$textfield-padding-x:						0.5rem !default;
+$textfield-padding-bottom:					0.5rem !default;
+$textfield-padding-top:						0.25rem !default;
+$textfield-line-height:						1.5 !default;
+
+$textfield-margin-bottom:					1rem !default;
+
+$textfield-font-size:						$font-size-base !default;
+$textfield-border-height:					$border-width !default;	
+$textfield-border-color:					pmd-theme-color(dividers, dark) !default;
+$textfield-dark-border-color:				pmd-theme-color(dividers, light) !default;
+
+$input-height-inner:                    	($font-size-base * $textfield-line-height) + ($textfield-padding-top)+ ($textfield-padding-bottom) !default;
+$input-height:                          	calc(#{$textfield-line-height * 1em} + #{$textfield-padding-y} + #{$textfield-padding-x} + #{$textfield-border-height}) !default;
+
+$textfield-color:							pmd-theme-color(primary, dark) !default;
+$textfield-dark-color:						pmd-theme-color(primary, light) !default;
+	
+$textfield-label-font-weight:				normal !default;
+$textfield-label-line-height:				1 !default;
+$textfield-label-font-size:					$font-size-sm !default;
+$textfield-label-color:						pmd-theme-color(secondary, dark) !default;
+$textfield-dark-label-color:				pmd-theme-color(secondary, light) !default;
+$textfield-floating-label-font-size:		$font-size-base !default;
+$textfield-floating-label-line-height:		1.2 !default;
+$textfield-floating-label-margin-bottom:	0.25rem !default;
+
+$textfield-height-lg:						44px !default;
+$textfield-line-height-lg:					1.33333 !default;
+$textfield-font-size-lg:					$font-size-lg !default;
+$textfield-floating-label-font-size-lg: 	$font-size-base !default;
+
+$textfield-height-sm:						30px !default;
+$textfield-line-height-sm:					1.33333 !default;
+$textfield-font-size-sm:					$font-size-sm !default;
+$textfield-floating-label-font-size-sm: 	0.625rem !default;
+
+$form-feedback-valid-color:         		theme-color("success") !default;
+$form-feedback-invalid-color:       		theme-color("danger") !default;
+
+// Outline Textfield
+$textfield-outline-border-height:           $textfield-border-height !default;
+$textfield-outline-border-color:            $textfield-border-color !default;
+$textfield-outline-border-radius:           $border-radius-lg !default;
+
+$textfield-outline-padding-x:               0.75rem !default;
+$textfield-outline-padding-y:               0.875rem !default;
+$textfield-outline-height:                  calc(#{$textfield-line-height * 1em} + #{$textfield-outline-padding-y * 2}) !default;
+$textfield-outline-inner-height:            calc(#{$textfield-line-height * 1em} + #{$textfield-outline-padding-y * 2} - #{$textfield-outline-border-height * 2}) !default;
+
+$textfield-outline-padding-x-sm:            0.75rem !default;
+$textfield-outline-padding-y-sm:            0.6rem !default;
+$textfield-outline-height-sm:               calc(#{$textfield-line-height * 1em} + #{$textfield-outline-padding-y-sm * 2}) !default;
+
+$textfield-outline-no-floating-padding-y:   calc(#{$textfield-outline-padding-y} - #{$textfield-outline-border-height}) !default;
+$textfield-outline-no-floating-padding-x:   calc(#{$textfield-outline-padding-x} - #{$textfield-outline-border-height}) !default;
+
+$textfield-outline-border-focused-height:   2px !default;
+$textfield-outline-focused-bg:              $textfield-focused-bg !default;
+$textfield-outline-no-floating-focused-padding-y: calc(#{$textfield-outline-padding-y} - #{$textfield-outline-border-focused-height}) !default;
+$textfield-outline-no-floating-focused-padding-x: calc(#{$textfield-outline-padding-x} - #{$textfield-outline-border-focused-height}) !default;
+
+$textfield-outline-no-floating-padding-y-sm:calc(#{$textfield-outline-padding-y-sm} - #{$textfield-outline-border-height}) !default;
+$textfield-outline-no-floating-padding-x-sm:calc(#{$textfield-outline-padding-x-sm} - #{$textfield-outline-border-height}) !default;
+
+$textfield-outline-focus-height:            calc(#{$textfield-line-height * 1em} + #{$textfield-outline-padding-y * 2} - #{$textfield-outline-border-focused-height * 2}) !default;
+
+// Filled Textfield
+$textfield-filled-bg:                   	$gray-100 !default;
+$textfield-filled-border-radius:        	$border-radius-lg !default;
+$textfield-filled-label-font-size:       	13px !default;
+$textfield-filled-border-color:          	$textfield-border-color !default;
+$textfield-filled-border-height:         	$textfield-border-height !default;
+
+$textfield-filled-padding-x:            	$textfield-outline-padding-x !default;
+$textfield-filled-padding-y:            	$textfield-outline-padding-y !default;
+$textfield-filled-padding-top:          	1.3125rem !default;
+$textfield-filled-padding-bottom:       	0.3rem !default;
+$textfield-filled-height:               	calc(#{$textfield-line-height * 1em} + #{$textfield-filled-padding-y * 2}) !default;
+$textfield-filled-inner-height:         	calc(#{$textfield-line-height * 1em} + #{$textfield-filled-padding-y * 2} - #{$textfield-filled-border-height}) !default;
+
+$textfield-filled-no-floating-padding-y:    calc(#{$textfield-filled-padding-y} - #{$textfield-filled-border-height}) !default;
+$textfield-filled-no-floating-padding-x:    calc(#{$textfield-filled-padding-x} - #{$textfield-filled-border-height}) !default;
+
+$textfield-filled-focused-border-height:  	$textfield-outline-border-focused-height !default;
+$textfield-filled-focus-height:      		calc(#{$textfield-line-height * 1em} + #{$textfield-filled-padding-y * 2} - #{$textfield-filled-focused-border-height}) !default;
+
+$custom-file-bg:                       		theme-color("light") !default;
+$custom-file-color:                     	pmd-theme-color(primary, dark) !default;
+$textfield-filled-dark-bg:              	rgba($white, 0.04) !default;
+
+// Textfield Group
+$pmd-input-group-icon-padding-right:		1rem !default ;
+$pmd-input-group-icon-margin-right:			1.5rem !default ;
+
+$input-group-outline-padding-y-sm:      	.5rem !default;
+$input-group-outline-padding-x-sm:      	.75rem !default;
+$input-group-outline-sm-height:         	calc(#{$textfield-line-height * 1em} + #{$input-group-outline-padding-y-sm * 2} + #{$textfield-border-height * 2}) !default;
+$input-group-outline-inner-height-sm:   	calc(#{$textfield-line-height * 1em} + #{$input-group-outline-padding-y-sm * 2}) !default;
+$input-group-outline-no-floating-padding-y-sm: calc(#{$input-group-outline-padding-y-sm} - #{$textfield-border-height}) !default;
+
+$input-group-outline-padding-y-lg:      	1rem !default;
+$input-group-outline-padding-x-lg:      	.75rem !default;
+$input-group-outline-height-lg:         	calc(#{$textfield-line-height * 1em} + #{$input-group-outline-padding-y-lg * 2} + #{$textfield-border-height * 2}) !default;
+$input-group-outline-inner-height-lg:   	calc(#{$textfield-line-height * 1em} + #{$input-group-outline-padding-y-lg * 2}) !default;
+$input-group-outline-no-floating-padding-y-lg: calc(#{$input-group-outline-padding-y-lg} - #{$textfield-border-height}) !default;
+
+$input-group-floating-label-padding-top: 	1.55rem !default;  
+$input-group-floating-label-padding-bottom: .5rem !default;  
+$input-group-height:                  		calc(#{$textfield-line-height * 1em} + #{$input-group-floating-label-padding-top} + #{$input-group-floating-label-padding-bottom} + #{$textfield-border-height}) !default;
+
+// Checkbox and Radio
+$custom-control-border-width:				0.125rem !default;
+$custom-control-border-color:				pmd-theme-color(secondary, dark) !default;
+$custom-control-checked-border-bg:			theme-color("primary") !default;
+$custom-control-disabled-color:				pmd-theme-color(disabled, dark) !default;
+$custom-control-disabled-border-color:		$custom-control-disabled-color;
+$custom-control-inverse-border-color:		pmd-theme-color(secondary, light) !default;
+$custom-control-inverse-checked-bg:			theme-color("primary") !default;
+$custom-control-inverse-disabled-color:		pmd-theme-color(disabled, light) !default;
+$custom-control-inverse-disabled-border-color:	$custom-control-inverse-disabled-color;
+$custom-control-ink-bg:						pmd-theme-color(icon, dark) !default;
+$custom-control-ink-dark-bg:				pmd-theme-color(icon, light) !default;
+
+// Checkbox
+$checkbox-checked-bg:						theme-color("primary") !default;
+$checkbox-check-color:						$white !default;
+$checkbox-check-size:						0.125rem !default;
+$checkbox-border-radius:					0.125rem !default;
+
+// Radio
+$radio-check-color:							theme-color("primary") !default;
+
+// Toggle Switch
+$toggle-switch-bar-bg:						pmd-theme-color(secondary, dark) !default;
+$toggle-switch-bg:							$white !default;
+$toggle-switch-check-bg:					theme-color("primary") !default;
+$toggle-switch-bar-check-bg:				pmd-theme-color(secondary, dark) !default;
+$toggle-switch-disabled-bg:					pmd-theme-color(disabled, dark) !default;
+$switch-label-box-shadow:					pmd-box-shadow(z-depth-1, dark) !default;		
+
+// Dropdowns
+$dropdown-padding-y:             		.5rem !default;
+$dropdown-bg:                    		$white !default;
+$dropdown-box-shadow:            		pmd-box-shadow(z-depth-1, dark) !default;
+$dropdown-transition: 			 		transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;			
+
+$dropdown-link-color:            		pmd-theme-color(primary, dark) !default;
+$dropdown-link-line-height:		 		1.42857143 !default;
+$dropdown-link-hover-color:      		darken($dropdown-link-color, 5%) !default;
+$dropdown-link-hover-bg:         		pmd-theme-color(hover, dark) !default;
+$dropdown-link-disabled-color:   		pmd-theme-color(disabled, dark) !default;
+
+$dropdown-item-padding-y:        		$space12 !default;
+$dropdown-item-padding-x:        		$space16 !default;
+
+$dropdown-header-color:          		pmd-theme-color(secondary, dark) !default;
+$dropdown-header-padding-y:		 		$space4 !default;
+$dropdown-header-padding-x:      		$space16 !default;
+
+// Navs
+$nav-tabs-link-color:		            	pmd-theme-color(secondary, dark) !default;
+$nav-tabs-link-active-bar-height:     		3px !default;
+$nav-tabs-link-font-size:					$font-size-sm !default;
+$nav-tabs-link-font-weight:					$font-weight-medium !default;
+
+$nav-tabs-link-active-color:            	pmd-theme-color(primary, dark) !default;
+$nav-tabs-link-active-bg:               	transparent !default;
+$nav-tabs-link-active-bar-bg:           	theme-color("secondary") !default;
+$nav-tabs-link-padding-top:					1.125rem !default;	
+$nav-tabs-link-padding-bottom:				1.0625rem !default;
+$nav-tabs-link-padding-x:               	1.5rem !default;
+
+$nav-tabs-scroll-arrow-bg:					$white !default;	
+$nav-tabs-scroll-arrow-color:				pmd-theme-color(secondary, dark) !default;
+$nav-tabs-scroll-arrow-padding-x:       	$nav-tabs-link-padding-x !default;
+$nav-tabs-scroll-arrow-padding-top:			0.75rem !default;
+$nav-tabs-scroll-arrow-padding-bottom:		0.375rem !default;
+
+$nav-tabs-dark-bg:							theme-color("primary") !default;
+$nav-tabs-dark-link-color:					pmd-theme-color(secondary, light) !default;
+$nav-tabs-dark-scroll-arrow-bg:				$nav-tabs-dark-bg !default;
+$nav-tabs-dark-scroll-arrow-color:			$nav-tabs-dark-link-color !default;
+$nav-tabs-dark-link-active-color:			pmd-theme-color(primary, light) !default;
+$nav-tabs-dark-link-active-bg:				$nav-tabs-dark-scroll-arrow-bg !default;	
+
+$nav-tabs-icons-padding-bottom:     		$space8 !default;
+
+// Navbar
+$navbar-dark-color:							pmd-theme-color(secondary, light) !default;
+$navbar-dark-hover-color:					pmd-theme-color(primary, light) !default;
+$navbar-dark-disabled-color:				pmd-theme-color(disabled, light) !default;
+$navbar-dark-active-color:					pmd-theme-color(primary, light) !default;
+
+$navbar-light-color:						pmd-theme-color(secondary, dark) !default;
+$navbar-light-hover-color:					pmd-theme-color(primary, dark) !default;
+$navbar-light-disabled-color:				pmd-theme-color(disabled, dark) !default;
+$navbar-light-active-color:					pmd-theme-color(primary, dark) !default;
+
+$navbar-toggler-icon-height:        		1.5rem !default;
+$navbar-toggler-icon-width:         		1.5rem !default;
+$navbar-toggler-icon-font-size:     		24px !default;
+$navbar-toggler-bg:                 		rgba(0,0,0,0.2) !default;
+
+$navbar-brand-margin-right:					1.5rem !default;
+$navbar-brand-font-size:             		1.5rem !default;
+$navbar-brand-line-height:			 		48px !default;
+
+$navbar-nav-line-height:			 		24px !default;
+$navbar-nav-font-weight:			 		font-weight("regular") !default;
+$navbar-nav-text-transform:			 		uppercase !default;
+$navbar-nav-padding-y:				 		1.25rem !default;
+$navbar-nav-mobile-padding-y:		 		0.75rem !default;
+$navbar-nav-mobile-padding-x:		 		1rem !default;
+
+$navbar-toggler-padding:			 		0.625rem !default;
+$navbar-toggler-margin-right:		 		0.5rem !default;
+$navbar-right-icon-margin-left:		 		1rem !default;
+$navbar-right-icon-margin-y:		 		0.75rem !default;
+$navbar-right-icon-mobile-margin-y:	 		0.5rem !default;
+
+$navbar-mobile-dropdown-padding-y:	 		0.25rem !default;
+$navbar-mobile-dropdown-padding-right:		1rem !default;
+$navbar-mobile-dropdown-padding-left:		2rem !default;
+$navbar-mobile-padding-x:			 		0.5rem !default;	
+
+$navbar-inverse-bg:	                 		theme-color("dark") !default;
+$navbar-inverse-color:	             		rgba($white,.75) !default;
+$navbar-inverse-hover-color:		 		rgba($white, 1) !default;
+
+$sidebar-overlay-bg:				 		pmd-theme-color(primary, dark) !default;
+$sidebar-overlay-opacity:			 		0.5 !default;
+$navbar-sidebar-bg:					 		$white !default;
+$navbar-sidebar-width:				 		85% !default;
+
+$user-info-margin-right:			 		-15px !default;	
+$user-info-margin-left:				 		1rem !default;	
+$user-info-padding-y:				 		0.75rem !default;
+$user-info-padding-x:				 		0.5rem !default;
+$user-info-mobile-padding-y:		 		0.5rem !default;
+$user-info-mobile-padding-x:		 		1rem !default;
+$user-info-mobile-bg:				 		lighten($navbar-inverse-bg, 10%) !default;
+$user-info-mobile-color:			 		$navbar-inverse-color;
+$user-info-mobile-hover-bg:			 		$user-info-mobile-bg;	
+
+// Sidebar
+$content-padding-top:					4.625rem !default;
+$content-padding-x:						1.875rem !default;
+$content-padding-x-sm:					1rem !default; 	
+
+$sidebar-width:							280px !default;
+$sidebar-padding-top:					4rem !default;
+$sidebar-user-info-bg:					rgba($black, 0.05) !default;
+
+$sidebar-box-shadow:					pmd-box-shadow(z-depth-1, dark) !default;
+$sidebar-transition:					all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+$sidebar-nav-link-padding-y:			$space16 !default;
+$sidebar-nav-link-padding-x:			$space12 !default;
+$sidebar-sub-nav-link-padding-x:		$space8 !default;
+$sidebar-sub-nav-link-font-weight:		$font-weight-normal !default;
+$sidebar-nav-link-color:				pmd-theme-color(primary, dark) !default;
+$sidebar-nav-link-font-weight:			$font-weight-medium !default;
+$sidebar-nav-icon-color:				pmd-theme-color(icon, dark) !default;
+$sidebar-nav-divider-color:				pmd-theme-color(dividers, dark) !default;
+$sidebar-nav-divider-width:         	1px !default;
+$sidebar-dark-nav-link-color:			pmd-theme-color(primary, light) !default;
+$sidebar-dark-nav-icon-color:			pmd-theme-color(icon, light) !default;
+$sidebar-dark-nav-divider-color:		pmd-theme-color(dividers, light) !default;
+$sidebar-nav-link-hover-bg:				pmd-theme-color(hover, dark) !default;
+
+$sidebar-toggler-margin-right:			0.5rem !default;
+
+$sidebar-scrollbar-bg: 					#F7F7F7 !default;
+$sidebar-scrollbar-thumb-bg: 			#BFBFBF !default;
+$sidebar-scrollbar-width: 				5px !default;
+$sidebar-scrollbar-border-radius: 		2px !default;
+$sidebar-scrollbar-thumb-border-radius: 	10px !default;
+
+// floating action button
+$floating-action-spacer-right:		 		1rem !default;
+$floating-action-spacer-bottom:		 		1rem !default;
+$floating-action-btn-spacer-bottom:	 		0.9375rem !default;
+$floating-action-btn-spacer-left:	 		0.5rem !default;
+$floating-action-btn-label-bg:		 		$white !default;
+$floating-action-btn-label-padding-y:		0.375rem !default; 
+$floating-action-btn-label-padding-x:		0.75rem !default; 
+$floating-action-btn-label-color:	 		pmd-theme-color(primary, dark) !default;
+$floating-action-btn-label-spacer-right: 	0.3125rem !default;
+$floating-action-btn-font-size-sm:	 		0.75rem !default;
+$floating-action-btn-font-size-lg:	 		$font-size-sm !default;
+$floating-action-btn-box-shadow:			pmd-box-shadow(z-depth-1, dark) !default;
+$floating-action-btn-focus-box-shadow:		pmd-box-shadow(z-depth-2, dark) !default;
+
+// Cards
+$card-gutter-width:							30px !default; 
+
+$card-spacer-y:                     		$space24 !default;
+$card-spacer-x:                     		$space24 !default;
+$card-spacer:								$space24 !default;
+
+$card-spacer-y-sm:                     		$space16 !default;
+$card-spacer-x-sm:                     		$space16 !default;
+$card-spacer-sm:							$space16 !default;
+
+$card-border-radius:                		$border-radius !default;
+$card-bg:                           		$white !default;
+$card-shadow:								pmd-box-shadow(z-depth-1, dark) !default;
+
+$card-title-font-size:						$h1-font-size !default;
+$card-title-font-weight:					$font-weight-base !default;
+$card-subtitle-font-size:					$font-size-sm !default;
+$card-subtitle-line-height:					1.6 !default;
+$card-subtitle-color:						pmd-theme-color(secondary, dark) !default;
+
+$card-actions-padding-y:					$space8 !default;
+$card-actions-spacer-y:						$space8 !default;
+$card-actions-spacer-x:						$space4 !default;
+$card-actions-btn-spacer-x:					$space8 !default;
+$card-actions-btn-flat-spacer-x:    		$space4 !default;
+
+$card-media-spacer-y:						$space4 !default;
+
+$card-list-bg:								$white !default;
+$card-list-spacer-y:                		$card-spacer/2  !default;
+
+$card-dark-subtitle-color:       			pmd-theme-color(secondary, light) !default;
+
+$card-title-separator-width: 60px !default;
+$card-title-separator-height: 3px !default;
+$card-title-separator-background-color: $primary !default;
+
+$card-info-font-size: .875rem !default;
+$card-info-color: rgba(0,0,0,.54) !default;
+$card-info-padding-y: 8px !default;
+$card-info-border-width: 1px !default;
+$card-info-border-color: #dee2e6 !default;
+
+$progress-list-group-item-padding-left: 50px !default;
+$progress-bar-group-item-bg: transparent;
+$progress-bar-bg: #ffffff !default;
+$progress-bar-width: 2px  !default;
+$progress-bar-bullet-height: 12px !default;
+$progress-bar-bullet-width: 12px !default;
+$progress-bar-success-bg: #67b951 !default;
+$progress-bar-danger-bg: #df6c6c !default;
+
+$pmd-card-overlay-color: #041a34 !default;
+$pmd-card-overlay-title-color: #ffffff !default;
+$pmd-card-overlay-title-font-size: 24px !default;
+$pmd-card-overlay-image-height: 350px !default;
+$pmd-card-overlay-image-opacity:0.64 !default;
+$pmd-card-overlay-hover-image-opacity: 0.16 !default;
+$pmd-card-overlay-hover-image-scale: scale(1.1) !default;
+$pmd-view-details-padding-x: 32px !default;
+$pmd-view-details-color:#ffffff !default;
+$pmd-view-details-font-size:14px !default;
+$pmd-view-details-translate: 0, 50px !default;
+$pmd-view-details-before-translate: -17px, 0 !default;
+$pmd-view-details-before-bottom: -28px !default;
+$pmd-view-details-hover-translate:0,-40% !default;
+
+$pmd-title-separator-margin-top: 1rem !default;
+$pmd-title-separator-margin-bottom:1.5rem !default;
+$card-title-separator-border-radius:3px !default;
+
+$pmd-list-fill-padding-y: 0.5rem !default;
+$pmd-list-fill-padding-x: 0.5rem !default;
+
+$pmd-floating-icon-bg: $primary !default;
+$pmd-floating-icon-height: 24px !default;
+$pmd-floating-icon-width: 24px !default;
+$pmd-floating-icon-padding:2px !default;
+$pmd-floating-icon-font-size: 18px !default;
+$pmd-floating-icon-size: 14px !default;
+$pmd-floating-icon-bottom: 2px !default;
+$pmd-floating-icon-right: 2px !default;
+$pmd-floating-icon-left: 2px !default;
+$pmd-floating-icon-top: 2px !default;
+
+$pmd-floating-content-spacer: 1rem !default;
+
+// Social icon
+$social-icon-top-margin: 8px !default;
+$social-icon-margin-x: 4px !default;
+$social-svg-icon-color: #848484 !default;
+$social-svg-icon-width: 50%  !default;
+$social-svg-icon-hover-color: #ffffff !default;
+
+// Tooltips
+$tooltip-transition:		  				opacity 0.3s ease-in-out, margin ease-in-out 0.3s  !default;
+$tooltip-color:               				$white !default;
+$tooltip-bg:                  				$black !default;
+$tooltip-opacity:             				.9 !default;
+$tooltip-padding-y:           				0.5rem !default;
+$tooltip-padding-x:           				1rem !default;
+$tooltip-font-size:			  				$font-size-sm !default;
+$tooltip-font-weight:		  				500 !default;
+$tooltip-line-height:		  				1.4 !default;
+
+// Badges
+$notification-color:						pmd-theme-color(icon, dark) !default;	
+$notification-icon-size:					32px !default;
+$notification-badge-size:					22px !default;
+$notification-badge-font:					$font-family-sans-serif	!default;
+$notification-badge-font-size:      		0.75rem !default;
+$notification-badge-font-weight:    		$font-weight-bold !default;
+$notification-badge-bg:						theme-color("primary") !default;	
+$notification-badge-color:					$white !default;
+
+$chip-border-radius:						1.5rem !default;
+$chip-line-height:							34px !default;
+$chip-spacer-right:							0.5rem !default;
+$chip-spacer-left:							0.75rem !default;
+$chip-bg:									#E0E0E0 !default;
+$chip-color:								pmd-theme-color(primary, dark) !default;
+$chip-action-color:							pmd-theme-color(primary, light) !default;
+$chip-action-bg:							pmd-theme-color(hint, dark) !default;
+$chip-action-font-size:						$font-size-sm !default;
+$chip-contact-size:							2.25rem !default;
+$chip-border-width:                    $border-width !default;
+$chip-outline-action-opacity: 0.38 !default;
+
+// Modals
+$modal-border-radius:						$border-radius !default;
+
+$modal-spacer:								$card-spacer !default;
+$modal-spacer-y:                    		$card-spacer-y !default;
+$modal-spacer-x:                    		$card-spacer-x !default;
+
+$modal-header-padding-y:					$card-spacer-y !default;
+$modal-header-padding-x:					$card-spacer-x !default;
+$modal-header-margin-bottom:				$card-spacer-y !default;
+$modal-header-border-color:   				pmd-theme-color(dividers, dark) !default;
+$modal-header-border-width:   				$border-width !default;
+$modal-header-title-font-weight:			500 !default;
+
+$modal-actions-spacer-y:					$card-actions-spacer-y !default;
+$modal-actions-spacer-x:					$card-actions-spacer-x !default;
+$modal-actions-btn-padding-y:				$space10 !default;
+$modal-actions-btn-padding-x:				$space8 !default;
+$modal-actions-btn-spacer-y:				$space8 !default;
+$modal-actions-btn-spacer-x:				$space4 !default;
+$modal-actions-btn-margin-left:				$space8 !default;
+$modal-actions-btn-flat-spacer-x:   		$card-actions-btn-flat-spacer-x !default;
+$modal-action-border-color:   				$modal-header-border-color !default;
+$modal-action-border-width:   				$modal-header-border-width !default;
+
+$modal-radio-checkbox-spacer-y:				$space16 !default;
+$modal-list-avatar-margin-bottom:			$card-spacer-y !default;
+
+// Alerts
+$alert-padding-y:                   		.75rem !default;
+$alert-padding-x:                   		1.25rem !default;
+$alert-margin-bottom:               		1rem !default;
+$alert-border-radius:               		$border-radius !default;
+$alert-link-font-weight:            		$font-weight-bold !default;
+$alert-border-width:                		$border-width !default;
+
+$alert-bg-level:                    		-10 !default;
+$alert-border-level:               			-9 !default;
+$alert-color-level:                 		6 !default;
+
+$pmd-alert-container-spacing: 				20px !default;
+$pmd-alert-link-color:        				$link-color !default;
+$pmd-alert-font-size:						$font-size-base !default;
+$pmd-alert-width:							300px !default;
+$pmd-alert-bg:								pmd-theme-color(primary, dark) !default;
+$pmd-alert-color:							pmd-theme-color(primary, light) !default;
+$pmd-alert-padding-y:						$space8 !default;
+$pmd-alert-padding-x:						$space24 !default;
+$pmd-alert-border-radius:  					$border-radius !default;
+$pmd-alert-text-align:						left !default;
+
+// Progress bars
+$progress-height:               			4px !default;
+$progress-font-size:            			.75rem !default;
+$progress-bg:                   			pmd-theme-color(secondary, dark) !default;
+$progress-border-radius:        			0 !default;
+
+// List group
+$card-list-padding-y:						$space8 !default;
+$card-list-bg:								$white !default;
+
+$list-group-bg:                  			$white !default;
+$list-group-border-color:        			$gray-200 !default;
+$list-group-border-width:        			$border-width !default;
+$list-group-border-radius:       			$border-radius !default;
+$list-group-item-line-height:         		1.4 !default;
+
+$list-group-item-padding-y:      			$space12 !default;
+$list-group-item-padding-x:      			$space16 !default;
+
+$list-group-item-padding-sm-y:        		$space8 !default;
+$list-group-item-padding-sm-x:        		$list-group-item-padding-x !default;
+
+$pmd-list-title-color: 						pmd-theme-color(primary, dark) !default;
+$pmd-list-dark-title-color: 				pmd-theme-color(primary, light) !default;
+$pmd-list-font-size:						$font-size-base !default;
+
+$pmd-list-subtitle-color:					pmd-theme-color(secondary, dark) !default;
+$pmd-list-dark-subtitle-color:				pmd-theme-color(secondary, light) !default;
+$pmd-list-subtitle-font-size:				$font-size-sm !default;
+	
+$pmd-list-text-color:				  		pmd-theme-color(secondary, dark) !default;
+$pmd-list-dark-text-color:					pmd-theme-color(secondary, light) !default;
+$pmd-list-text-font-size:	  				$font-size-base !default;
+$list-group-item-media-left:		  		1rem !default;
+
+$list-group-avatar-item-padding-y:	  		$space8 !default;
+$list-group-avatar-img-size:		  		40px !default;
+
+$list-icon-right:					  		32px !default;
+$list-icon-left:					  		32px !default;
+
+$pmd-list-bullet-icon-padding-left:  1.5rem !default;
+$pmd-list-bullet-icon:  "\E315" !default;
+$pmd-list-bullet-icon-opacity: 0.54 !default;
+
+// Accordion
+$accordion-box-shadow:						pmd-box-shadow(z-depth-1, dark) !default;
+$accordion-theme-colors: 					map-remove($theme-colors, "default", "primary", "secondary", "light", "dark", "error", "inverse", "information");
+$accordion-panel-margin-y:	  				$space16 !default;
+$accordion-panel-margin-x:	  				0 !default;
+$accordion-heading-padding-y: 				$space12 !default;
+$accordion-heading-padding-x: 				$space16 !default;
+$accordion-heading-color:             inherit !default;
+$accordion-heading-font-size:         $font-size-base !default;
+$accordion-heading-font-weight:       500 !default;
+$accordion-heading-line-height: 			$space24 !default;
+
+$accordion-inbox-padding-y:   				$space8 !default;
+$accordion-inbox-padding-x:	  				-$space8 !default;
+$accordion-inbox-padding-y-xs:				$space16 !default;
+$accordion-inbox-padding-x-xs:				-10px !default;
+$accordion-inbox-active-box-shadow: 		pmd-box-shadow(z-depth-0, dark) !default;
+
+$accordion-icon-padding-left:  				32px !default;
+$accordion-icon-padding-right: 				32px !default;
+
+// Datatable
+$datatable-control-bg:						$white !default;
+$datatable-control-color:					#31b131 !default;
+
+$datatable-checkbox-border-color:			$custom-control-border-color !default;
+$datatable-checkbox-border-radius:			$checkbox-border-radius !default;
+$datatable-checkbox-border-width: 			$custom-control-border-width !default;
+$datatable-checkbox-check-color:			$checkbox-check-color !default;
+$datatable-checkbox-check-size:				$checkbox-check-size !default;
+$datatable-checkbox-checked-bg:				$checkbox-checked-bg !default;
+$datatable-checkbox-checked-border-color: 	$datatable-checkbox-checked-bg !default;
+
+$datatable-active-bg:			    		#edf4fd !default;
+$datatable-dark-active-bg:					#313131 !default;
+$datatable-dark-checkbox-border-color: 		pmd-theme-color(secondary, light) !default;
+
+$datatable-details-font-size:                 $font-size-sm !default;
+$datatable-details-title-font-weight:         $font-weight-medium !default;
+$datatable-details-data-font-weight:          $font-weight-bold !default;
+$datatable-pagination-color:                  theme-color("primary") !default;
+$datatable-pagination-disabled-color:         pmd-theme-color(disabled, dark) !default;
+$datatable-row-select-bgcolor:                transparent !default;
+$datatable-select-info-background:            pmd-theme-color(primary, light) !default;
+
+$custom-select-inverse-bg:					pmd-theme-color(primary, dark) !default;
+$custom-select-inverse-color:				$white !default;
+$child-table-inverse-bg:					pmd-theme-color(primary, dark) !default;
+$custom-select-option-inverse-color:		pmd-theme-color(primary, dark) !default;
+
+// Range slider
+$range-slider-height:						2px !default;
+$range-slider-spacer-top:					40px !default;
+$range-slider-spacer-bottom:				6px !default;
+$range-slider-bar-bg:						theme-color("primary") !default;
+$range-slider-bg:							#dedede !default;
+
+$range-slider-marker-horizontal-bg: 		#000000 !default;
+$range-slider-marker-horizontal-height: 	2px !default;
+
+$range-slider-marker-vertical-bg: 			#000000 !default;
+$range-slider-marker-vertical-width: 		2px !default;
+
+$range-slider-tooltip-bg:					$range-slider-bar-bg !default;
+$range-slider-tooltip-color:				#ffffff !default;
+$range-slider-tooltip-font-size:			11px !default;
+$range-slider-disabled-bg:					#d0d0d0 !default;
+
+// Datetimepicker
+$datetimepicker-info-bg:					theme-color("primary") !default;
+$datepicker-accordion-toggle-bg:			darken($datetimepicker-info-bg, 15%) !default;
+$datepicker-accordion-toggle-color: 		#ffffff !default;
+$datepicker-info-color:						#ffffff !default;
+$datepicker-bg:								#ffffff !default;
+$datetimepicker-color:						#333333 !default;
+$datetimepicker-font-size:					14px !default;
+$datetimepicker-width:						300px !default;
+$clockpicker-size: 							270px !default;
+$datetimepicker-font-family: 				$font-family-sans-serif !default;
+$timepicker-info-font-size:					2.8rem !default;
+$datepicker-info-font-size:					2rem !default;
+$clockpicker-bg:							#eceff1 !default;
+$datepicker-year-info-font-size:			1rem !default;
+
+// Select2
+$select2-border-color:						$textfield-border-color !default;
+$select2-border-width:						$textfield-border-height !default;
+$select2-padding-y:							6px !default;
+$select2-color:								#555555 !default;
+$select2-font-family:						$font-family-sans-serif  !default;
+$select2-font-size:							14px !default;
+
+//
+$box-shadow-color:							#04465d !default;
+
+//
+$dt-font-weight:							$font-weight-medium !default;
+
+// Stepper Media Backgroud Color
+$stepper-title-font-size:                     $font-size-base !default;
+$stepper-subtitle-font-size:              $font-size-sm !default;
+
+// Stepper Media Backgroud Color
+$stepper-icon-bg:                     $gray-300 !default;
+$stepper-icon-active-bg:              theme-color("primary") !default;
+$stepper-icon-completed-bg:           theme-color("success") !default;
+$stepper-icon-disabled-bg:             theme-color("light") !default;
+$stepper-icon-error-bg:             theme-color("danger") !default;
+
+// Stepper Media Color
+$stepper-icon-color:                  color-yiq($stepper-icon-bg) !default;
+$stepper-icon-active-color:           color-yiq($stepper-icon-active-bg) !default;
+$stepper-icon-completed-color:        color-yiq($stepper-icon-completed-bg) !default;
+$stepper-icon-disabled-color:          $text-muted !default;
+$stepper-icon-error-color: color-yiq($stepper-icon-error-bg) !default;
+
+// Stepper Divider Color
+$stepper-divider-color:               $gray-300 !default;
+$stepper-divider-active-color:        theme-color("primary") !default;
+$stepper-divider-completed-color:     theme-color("success") !default;
+$stepper-divider-disabled-color:      $stepper-divider-color !default;
+$stepper-divider-error-color:         theme-color("danger") !default;
+
+// Stepper Margin, Padding, And Color
+$stepper-icon-margin-right:           0.75rem !default;
+$stepper-icon-margin-bottom:          0.5rem !default;
+$stepper-link-padding-y:              $space24 !default;
+$stepper-link-padding-x:              $space24 !default;
+$stepper-item-color:                  pmd-theme-color(primary, dark) !default;
+$stepper-item-disabled-color:          $text-muted !default;
+$stepper-completed-font-weight:       $font-weight-bold !default;
+$stepper-item-hover-bg:               theme-color("light") !default;
+
+// Stepper Alternative Label Divider Position And Divider Margin
+$stepper-alternative-label-divider-top-position:        2.5rem !default;
+$stepper-alternative-label-divider-margin-x:            1.5rem !default;
+
+// Stepper Content Margin and Text
+$pmd-stepper-right-margin: 1rem !default;
+$pmd-stepper-left-margin: 4.25rem !default;
+
+// Rating
+$pmd-rating-img-size: 30px !default;
+$pmd-rating-icon-size: 30px !default;
+$pmd-rating-starOn:#ecbd01 !default;
+$pmd-rating-staroff:#e2dfdf !default;
+$pmd-rating-starHalf:$pmd-rating-starOn !default;
+$pmd-rating-cancelOff:$pmd-rating-staroff !default;
+$pmd-rating-cancelOn:#ff5722 !default;

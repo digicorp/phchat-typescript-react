@@ -1,0 +1,10 @@
+/* Table Fixed Header */
+.table-fixed-head { position:relative; overflow:hidden; border: 1px solid #eceeef;}
+.table-fixed-head .table, .table-fixed-head.table-responsive{ border: 0; margin-bottom: 0;}
+.table-fixed-head .table thead tr { position:initial; height:0 !important;}
+.table-fixed-head .table thead tr th .top-fixed { position:absolute; top:0; padding:0.5rem  0; opacity:1;}
+.table-fixed-head .table thead tr th .top-fixed * { opacity:1;}
+.table-fixed-head .table .header-fixed { position: absolute; top: 0; left: 0; z-index: 100; background-color: #ffffff; border-bottom: 1px solid #eceeef;}
+.table-fixed-head .table.table-dark .header-fixed {background-color: #212529;}
+.table-fixed-head .table thead tr th{border: 0;}
+.table-fixed-head .table tbody tr td{vertical-align: middle;}

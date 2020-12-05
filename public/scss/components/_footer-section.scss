@@ -1,0 +1,15 @@
+.pmd-footer {
+	&.footer-bottom-absolute {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		padding: 0;
+		z-index: 9;
+		.footer-section {
+			border-top: solid $border-width $border-color;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+}

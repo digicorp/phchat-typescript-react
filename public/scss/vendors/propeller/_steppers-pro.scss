@@ -1,0 +1,268 @@
+/*!
+* Propeller Pro v1.4.1 (http://pro.propeller.in/): stepper.css
+* Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+* License: GNU General Public License v2.0 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/*------------------------
+    Stepper Default  
+------------------------*/
+// Stepper Responsive Mixin
+@mixin stepperResponsive() {
+    flex-direction: column;
+    .nav-item {
+        align-items: flex-start;
+        flex-direction: column;
+        &:not(:first-child):before{
+            position: absolute;
+            width: $border-width;
+            height: calc(100% - #{$stepper-alternative-label-divider-margin-x * 2});
+            left: $stepper-alternative-label-divider-top-position;
+            bottom: calc(50% + #{$stepper-alternative-label-divider-margin-x});
+            margin-top: .2rem;
+        }
+    }
+}
+
+// Stepper Alternative Lable Responsive Mixin
+@mixin stepperAlternativeLableResponsive() {
+    .nav-item {
+        text-align: left;
+        .pmd-stepper-item{
+            display: flex;
+            width: 100%;
+        }
+        .pmd-stepper-media{
+            margin-bottom: 0;
+            margin-right: $stepper-icon-margin-right;
+        }
+        &:not(:last-child):after{
+            position: absolute;
+            height: calc(100% - #{$stepper-alternative-label-divider-margin-x * 2});
+            width: $border-width;
+            right: auto;
+            top: calc(#{$stepper-alternative-label-divider-top-position} + #{$stepper-alternative-label-divider-margin-x});
+            left: $stepper-alternative-label-divider-top-position;
+        }
+    }
+}
+
+.pmd-stepper {
+    .nav-item {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        position: relative;
+        color: $stepper-item-color;
+        &:not(:last-child):after,
+        &:not(:first-child):before{
+            content: "";
+            position: relative;
+            flex: 1 1 auto;
+            height: $border-width;
+            background-color: $stepper-divider-color;
+            z-index: 1;
+        }
+
+        // Stepper Media
+        .pmd-stepper-media{
+            background-color: $stepper-icon-bg;
+            color: $stepper-icon-color;
+            margin-right: $stepper-icon-margin-right;
+            margin-bottom: 0;
+            .completed-media{
+                display: none;
+            }
+        }
+        .pmd-stepper-item,
+        .pmd-stepper-item{
+            padding: $stepper-link-padding-y $stepper-link-padding-x;
+            color: $stepper-item-color;
+            &:hover,
+            &:focus{
+                text-decoration: none;
+            }
+            .media-body {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            .pmd-stepper-title {
+                font-size: $stepper-title-font-size;
+                margin-bottom: 0;
+            }
+            .pmd-stepper-subtitle {
+                font-size: $stepper-subtitle-font-size;
+                margin-bottom: 0;
+            }
+        }
+        &.active{
+            .pmd-stepper-media{
+                background-color: $stepper-icon-active-bg;
+                color: $stepper-icon-active-color;
+            }
+        }
+        &.error{
+            .pmd-stepper-media{
+                background-color: $stepper-icon-error-bg;
+                color: $stepper-icon-error-color;
+            }
+        }
+        &.completed{
+            .pmd-stepper-media{
+                background-color: $stepper-icon-completed-bg;
+                color: $stepper-icon-completed-color;
+                .completed-media{
+                    display: block;
+                }
+                .default-media{
+                    display: none;
+                }
+            }
+            .card-title{
+                font-weight: $stepper-completed-font-weight;
+            }
+            &:after{
+                background-color: $stepper-divider-completed-color;
+            }
+            + .nav-item,
+            + .active,
+            + .disabled,
+            + .completed{
+                &:before{
+                    background-color: $stepper-divider-completed-color;
+                }
+            }
+        }
+        &.disabled{
+            pointer-events: none;
+            color: $stepper-item-disabled-color;
+            .pmd-stepper-item{
+                color: $stepper-item-disabled-color;
+            }
+            .pmd-stepper-media{
+                background-color: $stepper-icon-disabled-bg;
+                color: $stepper-icon-disabled-color;
+            }
+            &:before{
+                background-color: $stepper-divider-disabled-color;
+            }
+            + .active,
+            + .completed{
+                &:before{
+                    background-color: $stepper-divider-disabled-color;
+                }
+            }
+        }
+    }
+    // Stepper Laptop Responsive
+    @include media-breakpoint-down(lg) {
+        &.pmd-stepper-vertical-lg{
+            @include stepperResponsive();
+        }
+    }
+    // Stepper Tablet Responsive
+    @include media-breakpoint-down(md) {
+        &.pmd-stepper-vertical-md{
+            @include stepperResponsive();
+        }
+    }
+    // Stepper Mobile Responsive
+    @include media-breakpoint-down(sm) {
+        &.pmd-stepper-vertical-sm{
+            @include stepperResponsive();
+        }
+    }
+    // Stepper Hover
+    &.pmd-stepper-hover{
+        .nav-item{
+            .pmd-stepper-item{
+                @include transition($transition-base);
+                &:hover{
+                    background-color: $stepper-item-hover-bg;
+                }
+            }
+        }
+    }
+    // Stepper Divider
+    &.pmd-stepper-no-divider{
+        .nav-item{
+            &:not(:last-child):after,
+            &:not(:first-child):before{
+                content: "";
+                position: relative;
+                flex: 1 1 auto;
+                height: 0;
+                background-color: transparent;
+                z-index: 1;
+            }
+        }
+    }
+    // Bottom Label Stepper
+    &.pmd-stepper-bottom-label{
+        .nav-item {
+            text-align: center;
+            .pmd-stepper-media{
+                margin-right: 0;
+                margin-bottom: $stepper-icon-margin-bottom;
+            }
+        }
+        &.pmd-stepper-divider{
+            .nav-item {
+                display: block;
+                &:before{
+                    display: none;
+                }
+                &:not(:last-child):after{
+                    content: "";
+                    position: absolute;
+                    width: calc(100% - #{$stepper-alternative-label-divider-margin-x * 2});
+                    height: $border-width;
+                    top: $stepper-alternative-label-divider-top-position;
+                    z-index: 0;
+                    left: calc(50% + #{$stepper-alternative-label-divider-margin-x});
+                }
+                .pmd-stepper-item{
+                    z-index: 1;
+                    position: relative;
+                    display: block;
+                }
+            }
+        }
+        @include media-breakpoint-down(lg) {
+            &.pmd-stepper-vertical-lg{
+                @include stepperAlternativeLableResponsive();
+            }
+        }
+        @include media-breakpoint-down(md) {
+            &.pmd-stepper-vertical-md{
+                @include stepperAlternativeLableResponsive();
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            &.pmd-stepper-vertical-sm{
+                @include stepperAlternativeLableResponsive();
+            }
+        }
+    }
+    // Vertical Stepper
+    &.pmd-stepper-vertical {
+        flex-direction: column;
+        .nav-item {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        @include stepperAlternativeLableResponsive();
+        .pmd-stepper-content {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: $pmd-stepper-right-margin;
+            margin-left: $pmd-stepper-left-margin;
+            p {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

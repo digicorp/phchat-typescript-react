@@ -1,0 +1,56 @@
+.pmd-modal {
+
+    // Delete Modal
+    &.delete-modal {
+        .btn-modal-delete {
+            margin-right: $space16;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: $space12;
+            }
+        }
+        .btn-modal-cancel {
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+    }
+
+    // Add domain modal
+    &.modal-add-domain {
+        .modal-header {
+            .modal-title {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        .modal-footer {
+            justify-content: space-between;
+            .modal-btn-group {
+                @include media-breakpoint-down(sm) {
+                    margin: 0 0 $space16;
+                    width: 100%;
+                }
+                .modal-btn-submit {
+                    @include media-breakpoint-down(sm) {
+                        margin-right: 0;
+                    }
+                }
+                .modal-btn-cancel {
+                    @include media-breakpoint-down(sm) {
+                        margin-left: 0;
+                    }
+                }                
+            }
+            .modal-btn-subdomain {
+                @include media-breakpoint-down(sm) {
+                    margin: 0;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,110 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): typography.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+// Link
+a {
+	color: $link-color;
+	text-decoration: $link-decoration;
+	outline: $link-outline;
+	&:focus,
+	&:hover {
+		text-decoration: $link-hover-decoration;
+		outline: $link-outline;
+		color:$link-hover-color;
+		outline-offset: -2px;
+	}
+}
+
+.lead, p.lead {
+	font-size: $lead-font-size;
+	font-weight: $lead-font-weight;
+}
+
+// Headings 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	margin-bottom: $headings-margin-bottom;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	color: $headings-color;
+}
+
+// Font size and color according to Google Material 
+h1, .h1 { font-size: $h1-font-size;}
+h2, .h2 { font-size: $h2-font-size;}
+h3, .h3 { font-size: $h3-font-size;}
+h4, .h4 { font-size: $h4-font-size;}
+h5, .h5 { font-size: $h5-font-size;}
+h6, .h6 { font-size: $h6-font-size;}
+
+// Type display classes
+$pmd: (
+  display1: (
+    font-size: $display1-size, /* 112sp */
+    line-height:$display1-line-height, /* 112sp */
+    font-weight: $display1-line-height,
+    letter-spacing:$display1-letter-spacing
+  ),
+  display2: (
+    font-size: $display2-size, /* 56px */
+    line-height:$display2-line-height, /* 56px */
+    font-weight: $display2-font-weight,
+    letter-spacing:$display2-letter-spacing
+  ),
+  display3: (
+    font-size: $display3-size, /* 45px */
+    line-height:$display3-line-height, /* 48px */
+    font-weight: $display3-font-weight,
+  ),
+  display4: (
+    font-size: $display4-size,
+    line-height: $display4-line-height, /* 40sp */
+    font-weight: $display4-font-weight,
+  ),
+  headline: (
+    font-size: $pmd-headline,
+    line-height: $pmd-headline-line-height,
+    font-weight: $pmd-headline-font-weight,
+  ),
+  title: (
+    font-size: $pmd-title, /* 20sp */
+    line-height: $pmd-title-line-height,
+    font-weight: $pmd-title-font-weight,
+  ),
+  subheading2: (
+    font-size: $pmd-subheading2, /* 16sp */
+    line-height: $pmd-subheading2-line-height,
+    font-weight: $pmd-subheading2-font-weight,
+  ),
+  subheading1: (
+    font-size: $pmd-subheading1, /* 15sp */
+    line-height: $pmd-subheading1-line-height,
+    font-weight: $pmd-subheading1-font-weight,
+  ),
+  body2: (
+    font-size: .875rem, /* 14sp */
+    line-height: 1.5rem, /* 24sp */
+    font-weight: $font-weight-medium,
+  ),
+  body1: (
+    font-size: .875rem, /* 14sp */
+    line-height: 1.25rem, /* 20sp */
+    font-weight: $font-weight-normal,
+  ),
+  caption: (
+    font-size: $pmd-caption-font-size, /* 12sp */
+    font-weight: $font-weight-normal,
+	  letter-spacing: $pmd-caption-letter-spacing,
+  )
+) !default;
+
+@each $style in map-keys($pmd) {
+  .pmd-#{$style} {
+    @include pmd-typography($style);
+  }
+}
+

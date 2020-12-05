@@ -1,0 +1,425 @@
+// Text Color 
+$white:       #fff;
+$gray-100:    #F3F4F5;
+$gray-200:    #efefef;
+$gray-300:    #dee2e6;
+$gray-400:    #a3a9c2;
+$gray-500:    #b3c6cd;
+$gray-600:    #809ca6;
+$gray-700:    #5e6894;
+$gray-800:    #475385;
+$gray-900:    #3A4455;
+$black:       #17273D;
+$z-black:     #000000;
+
+// Background Color
+$blue:            #1F89DE;
+$indigo:          #1CBCB7;
+$purple:          #7266ba;
+$pink:            #e83e8c;
+$red:             #ff4057;
+$orange:          #F58634;
+$yellow:          #FFA000;
+$light-yellow:    #fff2c9;
+$green:           #4caf50;
+$teal:            #2bbbad;
+$cyan:            #03a9f4;
+$green-cyan:      #4acc8e;
+$orchid:          #9C27B0;	
+$sky-blue:        #33b5e5;
+$dark-pink: #cc3399;
+$faux-blue: #031c47;
+$polo-blue: #8EAADB;
+
+// colors 
+$primary:               $dark-pink;
+$primary-light:         rgba($primary, .12);
+$secondary:             $polo-blue;
+$secondary-light: rgba($secondary, .12);
+$success:               $green;
+$info:                  $cyan;
+$warning:               $yellow;
+$danger:                $red;
+$danger-light:          rgba($danger, 0.12);
+$light:                 $gray-100;
+$dark:                  $faux-blue;
+$default:		            $white;
+$white-light:           rgba($white, .12);
+
+$theme-colors: ();
+$theme-colors: map-merge((
+  "primary":                $primary,
+  "primary-light":          $primary-light,
+  "secondary":              $secondary,
+  "secondary-light":        $secondary-light,
+  "success":                $success,
+  "info":                   $info,
+  "warning":                $warning,
+  "danger":                 $danger,
+  "danger-light":           $danger-light,
+  "gray":                   $gray-300,
+  "light":                  $light,
+  "dark":                   $dark,
+  "white-light":            $white-light
+), $theme-colors);
+
+// Color system
+$bg-primary: theme-color("primary");
+$bg-secondary: theme-color("secondary");
+$bg-white: $white;
+$transparent: transparent;
+
+// Text colors according to light vs dark and text type.
+$pmd-theme-colors: (
+  dark: (
+    primary:      rgba($black, 1),
+    secondary:    rgba($black, .70),
+    hint:         rgba($black, .38),
+    disabled:     rgba($black, .38),
+    icon:         rgba($black, .24),
+	  hover:        rgba($black, .075),
+	  dividers:     rgba($black, .12)  
+  ),
+  light: (
+    primary:      $white,
+    secondary:    rgba($white, .87),
+    hint:         rgba($white, .5),
+    disabled:     rgba($white, .5),
+    icon:         rgba($white, .87),
+	  hover:        rgba($white, .38),
+	  dividers:     rgba($white, .12)
+  )
+);
+
+$body-bg:       			  				    rgba($secondary, 0.08);
+$body-color:    			  				    #3b4350;
+$yiq-contrasted-threshold: 					160;
+
+// Typography 
+
+$font-family-base:             		  'Open Sans', sans-serif;
+
+$font-weight: (
+  thin:       100,
+  light:      300,
+  regular:    400,
+  medium:     500,
+  semibold:   600,
+  bold:       700,
+  black:      900
+);
+
+$font-weight-light:            				        font-weight("light");
+$font-weight-normal:           				        font-weight("regular");
+$font-weight-medium:           				        font-weight("medium");
+$font-weight-semibold:           			        font-weight("semibold");
+$font-weight-bold:             				        font-weight("bold");
+
+$font-size-base:               			        	1rem; 
+$font-size-lg:                 				        ($font-size-base);
+$font-size-sm:                 				        ($font-size-base * .875);
+
+// Headings
+$h1-font-size:                				            $font-size-base * 2.125;
+$h1-mobile-font-size:                				      $font-size-base * 2;
+$h2-font-size:                				            $font-size-base * 1.5;
+$h2-mobile-font-size:                				      $font-size-base * 1.5;
+$h3-font-size:                			            	$font-size-base * 1.25;
+$h3-mobile-font-size:                				      $font-size-base * 1.25;
+$h4-font-size:                				            $font-size-base * 1.125;
+$h4-mobile-font-size:                				      $font-size-base * 1;
+$h5-font-size:                				            $font-size-base * 1;
+$h6-font-size:                			            	$font-size-base * .875;
+
+$h1-font-weight:							                $font-weight-bold;
+$h2-font-weight:							                $font-weight-bold;
+$h3-font-weight:                							$font-weight-bold;
+$h4-font-weight:							                $font-weight-bold;
+$h5-font-weight:							                $font-weight-normal;
+
+$headings-font-family:         				        'Merriweather', serif;
+$headings-font-weight:         				        $font-weight-bold;
+$headings-line-height:         				        1.4;
+$headings-color:               			        	#060b13;
+
+$display4-mobile-font-size:                   1.75rem;
+$display4-line-height:						            2.5rem;
+$display4-font-weight:						            $font-weight-medium;
+$display3-size:                               2.8125rem;
+$display3-line-height:						            3.125rem;
+$display3-mobile-font-size:                   2.125rem;
+$display3-mobile-line-height:						      2.5rem;
+$display3-font-weight:						            $font-weight-medium;
+$display2-line-height:						            6rem;
+$display2-font-weight:						            $font-weight-light;
+$display1-line-height:						            7rem;
+$display1-font-weight:						            $font-weight-light;
+
+$font-family-sans-serif:                      $font-family-base;
+$pmd-body: 		               				          $font-size-base * .875;
+$pmd-headline:                 				        $font-size-base * 1.5;
+$pmd-headline-font-weight:					          $font-weight-semibold;
+$pmd-headline-line-height:				          	initial;	
+
+$pmd-title:                	   				        $font-size-base * 1.25;
+$pmd-title-font-weight:						            $font-weight-normal;
+$pmd-title-line-height:						            initial;	
+
+$pmd-subheading2:              				        $font-size-base * 1;
+$pmd-subheading2-font-weight:				          $font-weight-normal;
+$pmd-subheading2-line-height:         				initial;	
+
+$pmd-subheading1:			   				              $font-size-base * .875;
+$pmd-subheading1-font-weight:			          	$font-weight-light;
+$pmd-subheading1-line-height:				          initial;	
+$pmd-no-message-color:                        pmd-theme-color(disabled, dark);
+
+// Spacing
+$space4:                                      0.25rem;
+$space6:                                      0.375rem;
+$space8:                                      0.5rem;
+$space10:                                     0.625rem;
+$space12:                                     0.75rem;
+$space14:                                     0.875rem;
+$space16:                                     1rem;
+$space18:                                     1.125rem;
+$space20:                                     1.25rem;
+$space24:                                     1.5rem; 
+$space30:                                     1.875rem;
+$space40:                                     2.5rem;
+$space50:                                     3.125rem;
+$space60:                                     3.75rem;
+$space80:                                     5rem; 
+$space96:                                     6rem; 
+$space112:                                     7rem; 
+$space136:                                    8.5rem;
+
+//Box Shadow
+$pmd-box-shadow: ();
+$pmd-box-shadow: map-merge((
+  dark: (
+	z-depth-1: (0 2px 16px rgba($faux-blue,.16)),
+  z-depth-2: (0 3px 5px -1px rgba($black,.2), 0 6px 10px 0 rgba($black,.14), 0 1px 18px 0 rgba($black,.12)),
+	z-depth-3: (0 5px 5px -3px rgba($black,.2), 0 8px 10px 1px rgba($black,.14), 0 3px 14px 2px rgba($black,.12)),
+	z-depth-4: (0 8px 32px -4px rgba($black, 0.20)),
+	z-depth-5: (0 16px 28px -4px rgba($black, 0.2), 0 12px 36px 1px rgba($black, 0.14), 0 8px 20px 0px rgba($black, 0.12))
+  ),
+  light: (
+  z-depth-1: (0 1px 4px rgba($black,.15)),
+  z-depth-2: (0 6px 20px rgba($primary,.25)),
+	z-depth-3: (0 6px 20px rgba($faux-blue,.08)),
+	z-depth-4: (0 8px 40px rgba($faux-blue,.12)),
+	z-depth-5: (0 16px 28px -4px rgba($black, 0.12), 0 12px 36px 1px rgba($black, 0.08))
+  )
+), $pmd-box-shadow);
+$no-shadow:                                       none;
+
+// Cards
+$card-shadow:								                      pmd-box-shadow(z-depth-3, light);
+$card-hover-shadow:							                  pmd-box-shadow(z-depth-4, light);
+$icon-shadow:								                      pmd-box-shadow(z-depth-4, dark);
+$card-border-color:                               pmd-theme-color(hover, dark);
+$card-spacer-y:                     		          $space24;
+$card-spacer-x:                     		          $space24;
+$card-spacer:								                      $space24;
+$card-hover-background: theme-color("secondary");
+
+// List Group
+$list-group-item-mobile-padding-x:            $space16;
+$list-group-item-padding-sm-y:                $space12;
+$list-group-item-padding-sm-x:                $space12;
+$list-group-item-padding-y:      			        $space12;
+$list-group-item-padding-x:      			        $space16;
+
+// Sidebar
+$pmd-content-padding-right:                   400px;
+$sidebar-width:						 		                280px;
+$sidebar-icon-width:                          24px;
+$sidebar-icon-height:                         24px;
+$sidebar-nav-link-padding-y:			            $space16;
+$sidebar-nav-link-padding-x:			            $space16;
+$sidebar-nav-link-font-weight:			    	    $font-weight-medium;
+$sidebar-padding-top:                         4.5rem;
+$sidebar-mobile-padding-top:                  7.5rem;
+$sidebar-sub-nav-link-font-weight:			      $font-weight-normal;
+$sidebar-submenu-bgcolor:                     pmd-theme-color(icon, dark);
+$sidebar-logo-bgcolor:                        darken(theme-color("primary"), 10%);
+$sidebar-nav-link-color:                      pmd-theme-color(hint, dark);
+$sidebar-nav-link-divider-color:              pmd-theme-color(dividers, light);
+$sidebar-user-info-bg:				 		            darken(theme-color("primary"), 10%);
+$user-info-mobile-padding-y:		              1rem;
+$sidebar-nav-link-hover-bg:				             theme-color('primary');
+$sidebar-dark-nav-link-color:                  pmd-theme-color(secondary, light);
+$sidebar-dark-nav-icon-color:                  pmd-theme-color(hint, light);
+$sidebar-dark-nav-link-hover-color:            pmd-theme-color(primary, light);
+$sidebar-dark-nav-link-active-color:           pmd-theme-color(primary, light);
+$sidebar-box-shadow:					                 pmd-box-shadow(z-depth-4, dark);
+
+$sidebar-scrollbar-color:                     theme-color('light');
+$sidebar-scrollbar-thumb-color:               theme-color('dark');
+
+$sidebar-right-width:                           360px;
+$sidebar-right-mobile-width:                    280px;
+$sidebar-right-title-font-size:                 $h3-font-size;
+
+// Footer
+$footer-info-color:                           pmd-theme-color(secondary, dark);
+
+// Border
+$border-width: 			 	  				              1px;
+$border-width-2: 			 	  				            2px;
+$border-color: 			 	 				                pmd-theme-color(dividers, dark);
+$border-inverse-color: 			 	 				        rgba($white, 0.16);
+$border-color-primary: 			 	 		            theme-color('primary');
+$border-color-success: 			 	 			          theme-color('success');
+$border-color-disabled: 			 	 	            pmd-theme-color(disabled, dark);
+$border-radius:          	  				          0.250rem;
+$border-radius-lg:       	  				          .3rem;
+$border-radius-sm:       	  				          .2rem;
+$border-radius-50:       	  				          3.125rem;
+
+// Chip
+$chip-line-height:							              28px;
+$chip-action-bg:							                pmd-theme-color(hint, dark);
+$chip-border-width:                           $border-width-2;
+
+// Checkbox and Radio
+$custom-control-label-padding-left:           1.5rem;
+$custom-control-border-color:                 pmd-theme-color(hint, dark);
+$checkbox-checked-bg:                         theme-color('primary');
+$custom-control-checked-border-bg:            theme-color('primary');
+$radio-check-border-color:                    theme-color("primary");
+$radio-check-color:							              theme-color("primary");
+
+// Button
+$btn-border-radius:           				         $border-radius;
+$btn-border-radius-lg:                         $btn-border-radius;
+$btn-border-radius-sm:                         $btn-border-radius;
+$btn-font-weight:                              $font-weight-bold;
+$btn-font-size:								                 $font-size-sm;
+$btn-raised-box-shadow:						                pmd-box-shadow(z-depth-1, light);
+$btn-raised-focus-box-shadow:				              pmd-box-shadow(z-depth-4, dark);
+$btn-padding-y:               				         0.75rem;
+$btn-padding-x:               				         1rem;
+$btn-padding-y-lg:            				         1rem;
+$btn-padding-x-lg:            				         2rem;
+$btn-font-size-lg:			  				             $font-size-sm;
+$btn-padding-y-sm:            				         $space4;
+$btn-padding-x-sm:            				         $space8;
+$btn-font-size-sm:			  				             12px;
+$btn-border-width:            				         $border-width;
+
+// Textfield
+$textfield-padding-y:						              1rem;
+$textfield-padding-x:						              0.75rem;
+$textfield-height:                            48px;
+$textfield-border-radius:                     0.25rem;
+$textfield-label-bgcolor:                     pmd-theme-color(primary, light);
+$textfield-color:							                pmd-theme-color(primary, dark);
+$textfield-disabled-bgcolor:                  #f2f3f8;
+
+// Material Icons
+$material-icons-md:                           32px;
+$material-icon-primary-color:                 theme-color('primary');
+$material-icon-danger-color:                  theme-color('danger');
+$material-icon-danger-bg:                     lighten(theme-color("danger"), 30%);
+$material-icon-primary-bg:                    lighten(theme-color("primary"), 60%);
+
+$pmd-icon-circle-size-md: 					          72px;
+
+// Dropdowns
+$dropdown-box-shadow:                         pmd-box-shadow(z-depth-3, light);
+
+//Table
+$table-head-color:              			        pmd-theme-color(secondary, dark);
+$table-head-font-size:						            12px;
+$table-head-font-weight:					            $font-weight-semibold;
+
+// Navbar
+$nav-tabs-link-active-bg:               	    transparent;
+$nav-tabs-link-active-color:            	    theme-color("primary");
+$nav-tabs-link-font-weight:					          $font-weight-bold;
+$nav-tabs-link-padding-top:					          1.325rem;	
+$nav-tabs-link-padding-bottom:				        1.1625rem;
+$nav-tabs-link-padding-x:               	    1.5rem;
+
+// Spinner
+$spinner-size: 3rem ;
+$spinner-border-size: .3em ;
+$spinner-border-color : theme-color("dark") ;
+
+// SM Spinner 
+$spinner-sm-size: 1.5rem ;
+$spinner-sm-border-size: .25em ;
+
+// Spinner with Logo
+$spinner-wrapper-size: 7rem ;
+// $spinner-wrapper-bg: theme-color("light") ;
+// $spinner-wrapper-shadow: pmd-box-shadow(z-depth-1, dark) ;
+$logo-spinner-size: (0.75 * $spinner-wrapper-size) ;
+$logo-spinner-border-size: 0.2em ;
+$spinner-logo-size: (0.6 * $spinner-wrapper-size);
+
+// Link
+$link-color:                                  theme-color("primary");
+$link-hover-decoration:                       none;
+$link-hover-decoration: 				  	          none;
+
+// Blank State Page Height
+$blank-state-height:                          600px;
+$blank-state-mobile-height:                   400px;
+
+//Login page
+$login-padding-y:                            3rem;
+$login-mobile-padding-y:                     1rem;
+$login2-footer-divider-color:                pmd-theme-color(dividers, light);
+$login2-footer-text-color:                   pmd-theme-color(secondary, light);
+
+$enable-gradients: false;
+
+// card
+//
+$card-cap-bg: #fff;
+
+// sidebar
+$sb-sidebar-width: 224px;
+
+//Login page
+$login-padding-y:                            3rem;
+$login-mobile-padding-y:                     1rem;
+$login2-footer-divider-color:                pmd-theme-color(dividers, light);
+$login2-footer-text-color:                   pmd-theme-color(secondary, light);
+
+// Badge
+$badge-border-level:                 	       -5 !default;
+
+// Stepper Media Background Color
+$stepper-icon-bg:                            rgba(theme-color("secondary"), 0.25);
+
+//Dashboard
+$discover-model-color:                      #0097A7;
+$generate-model-color:                      #388E3C;
+$monitor-model-color:                       #E64A19;
+$predict-model-color:                       $black;
+$deploy-model-color:                        #7B1FA2;
+$history-model-color:                       #FFA000;
+$tags-model-color:                          #af460f;
+$tagsubmit-model-color:                     #5f6caf;
+$dataprep-model-color:                      #17bb88;
+
+//Breadcrumbs
+$breadcrumb-text-color:                       pmd-theme-color(secondary, dark);
+$breadcrumb-divider-color:                    pmd-theme-color(icon, dark);
+$breadcrumb-active-text-color:                pmd-theme-color(disabled, dark);
+$breadcrumb-hover-text-color:                 theme-color("primary");
+
+//Badge
+$badge-completed-color:                         $success;
+$badge-process-color:                           $warning;
+
+// Progress
+$progress-height:                              6px;
+
+// View History Colors
+$inprogress-color: #fbc02d;
+$completed-color: #33da3d;

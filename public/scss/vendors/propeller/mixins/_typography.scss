@@ -1,0 +1,10 @@
+@mixin pmd-typography($style) {
+  $style-props: map-get($pmd, $style);
+
+  @if not map-has-key($pmd, $style) {
+    @error "Invalid style specified! Choose one of #{map-keys($mdc-typography-styles)}";
+  }
+  @each $key, $value in $style-props {
+    #{$key}: $value;
+  }
+}

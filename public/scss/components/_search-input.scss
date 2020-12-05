@@ -1,0 +1,24 @@
+.pmd-search {
+  flex-grow: 1;
+  border-radius: $border-radius;
+  border: solid $border-width-2 $border-color;
+  overflow: hidden;
+  .input-group {
+    width: 100%;
+  }
+  .input-group-text,
+  .form-control {
+    border: none;
+    background-color: pmd-theme-color(primary, light);
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .form-control {
+    padding-left: 0;
+  }
+  .material-icons {
+    color: $textfield-color;
+    font-size: 22px;
+  }
+}

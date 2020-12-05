@@ -1,0 +1,39 @@
+@mixin popover-variant($background, $border, $color) {
+	background-color: $background; 
+	border-color: $border;
+	.popover-body{
+		color: color-yiq($color);
+	}
+	&.bs-popover-top {
+	  .arrow::before {
+		border-top-color: $border;
+	  }
+	  .arrow::after {
+		border-top-color: $background;
+	  }
+	}
+	&.bs-popover-right {
+		.arrow::before {
+			border-right-color: $border;
+		}
+		.arrow::after {
+			border-right-color: $background;
+		}
+	}
+	&.bs-popover-bottom {
+	  .arrow::before {
+		border-bottom-color: $border;
+	  }
+	  .arrow::after {
+		border-bottom-color: $background;
+	  }
+	}
+	&.bs-popover-left {
+	  .arrow::before {
+		border-left-color: $border;
+	  }
+	  .arrow::after {
+		border-left-color: $background;
+	  }
+	}
+}

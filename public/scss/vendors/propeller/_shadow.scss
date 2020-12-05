@@ -1,0 +1,38 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/)
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+.pmd-z-depth-1 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-1, dark));
+}
+.pmd-z-depth-2 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-2, dark));
+}
+.pmd-z-depth-3 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-3, dark));
+}
+.pmd-z-depth-4 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-4, dark));
+}
+.pmd-z-depth-5 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-5, dark));
+}
+
+.pmd-z-depth-light-1 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-1, light));
+}
+.pmd-z-depth-light-2 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-2, light));
+}
+.pmd-z-depth-light-3 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-3, light));
+}
+.pmd-z-depth-light-4 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-4, light));
+}
+.pmd-z-depth-light-5 {
+	@include pmd-box-shadow(pmd-box-shadow(z-depth-5, light));
+}

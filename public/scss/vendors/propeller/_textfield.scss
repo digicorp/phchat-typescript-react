@@ -1,0 +1,680 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): textfield.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+// input focus bar
+.pmd-textfield-focused { 
+	@include transition($textfield-transition);
+	width: 100%; 
+	height:$textfield-focused-height;
+	display:block; 
+	top:-1px;  
+	background-color:$textfield-focused-bg; 
+	@include transform-scalex(0);
+	position:relative; 
+	z-index:2;
+}
+
+.pmd-textfield {
+	&.pmd-textfield-floating-label-active {
+		.pmd-textfield-focused { 
+			@include transform-scalex(1);
+		}
+	}
+	&.pmd-textfield-is-invalid{
+		~ .invalid-feedback{
+			display: block;
+		}
+	}
+	.form-control,
+	.custom-select {
+		background-color: transparent; 
+		border: none; 
+		border-bottom:solid $textfield-border-height $textfield-border-color; 
+		outline: none; 
+		box-shadow:none; 
+		padding:0; 
+		border-radius:0; 
+		font-size:$textfield-font-size;
+		padding:$textfield-padding-top 0 $textfield-padding-bottom;
+		color: $textfield-color;
+		height: $input-height;
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover, 
+		&:-webkit-autofill:focus {
+			-webkit-box-shadow: none;
+			transition: background-color 5000s ease-in-out 0s;
+			-webkit-text-fill-color: $textfield-color;
+		}
+	}
+	.custom-select {
+		background:url(../../assets/images/baseline-arrow_drop_down.svg) no-repeat right 0.35rem center/22px 22px;
+		padding-left: $textfield-padding-y;
+	}
+	.custom-select.is-invalid, 
+	.was-validated .custom-select:invalid{
+		background:url(../../assets/images/baseline-arrow_drop_down.svg) no-repeat right 0.35rem center/22px 22px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") #fff no-repeat center right 1.75rem/calc(.75em + .375rem) calc(.75em + .375rem);
+	}
+	.custom-select.is-valid, 
+	.was-validated .custom-select:invalid{
+		background:url(../../assets/images/baseline-arrow_drop_down.svg) no-repeat right 0.35rem center/22px 22px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc(.75em + .375rem) calc(.75em + .375rem);
+	}
+	label{
+		font-weight:$textfield-label-font-weight; 
+		line-height:$textfield-label-line-height;
+		font-size:$textfield-label-font-size; 
+		color:$textfield-label-color;
+		margin-bottom: 0;
+		&.col-form-label-lg,
+		&.col-form-label-sm{
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+	textarea.form-control{
+		height: auto;
+	}
+	.col-form-label{
+		font-size: inherit;
+		color: $textfield-color;
+		line-height:$textfield-line-height;
+	}
+	.form-control-lg {
+		font-size: $textfield-font-size-lg; 
+	}
+	.form-control-sm {
+		font-size: $textfield-font-size-sm;
+	}
+	.col-form-label-lg {
+		font-size: $textfield-floating-label-font-size-lg;
+	}
+	.col-form-label-sm {
+		font-size: $textfield-floating-label-font-size-sm;
+	}
+	.custom-select::after{
+		font-family: "Material icons";
+    	content: "\E5C5";
+	}
+	.form-control-plaintext{
+		outline: none;
+	}
+
+	&.pmd-textfield-is-valid{
+		.valid-feedback{
+			display: block;
+		}
+	}
+	&.pmd-textfield-is-invalid{
+		.invalid-feedback{
+			display: block;
+		}
+	}
+
+	//-------------------
+	// Textfield Outline
+	//-------------------
+	&.pmd-textfield-outline{
+		.form-control,
+		.custom-select{
+			border:$textfield-outline-border-height solid $textfield-outline-border-color;
+			border-radius:$textfield-outline-border-radius;
+			padding:$textfield-outline-no-floating-padding-y $textfield-outline-no-floating-padding-x;
+			height: $textfield-outline-height;
+		}
+		.form-control-sm{
+			padding:$textfield-outline-no-floating-padding-y-sm $textfield-outline-no-floating-padding-x-sm;
+			height: $textfield-outline-height-sm;
+		}
+		
+		// Textfield with Floating Label
+		.pmd-textfield-outline-wrapper{
+			position: relative;
+			.form-control:not([placeholder]),
+			.custom-select:not([placeholder]){
+				border:none;
+				padding:$textfield-outline-padding-y $textfield-outline-padding-x;
+			}
+			textarea.form-control:not([placeholder]){
+				margin-top: $textfield-outline-padding-y;
+				display: inline-flex;
+				padding-top: 0;
+			}
+			.form-control-sm:not([placeholder]){
+				padding:$textfield-outline-padding-y-sm $textfield-outline-padding-x-sm;
+				height: $textfield-outline-height-sm;
+			}
+			label{
+				transform: translateY(-11px);
+			}
+		}
+		.pmd-textfield-label-wrapper {
+			display: flex;
+			position: absolute;
+			right: 0;
+			left: 0;
+			box-sizing: border-box;
+			width: 100%;
+			max-width: 100%;
+			height: 100%;
+			text-align: left;
+			pointer-events: none;
+		}
+		.pmd-textfield-outline-left,
+		.pmd-textfield-outline-right,
+		.pmd-textfield-outline-middle{
+			box-sizing: border-box;
+			height: 100%;
+			transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+			border-top: $textfield-outline-border-height solid $textfield-outline-border-color;
+			border-bottom: $textfield-outline-border-height solid $textfield-outline-border-color;
+			pointer-events: none;
+		}	
+		.pmd-textfield-outline-left{
+			border-radius: $textfield-outline-border-radius 0 0 $textfield-outline-border-radius;
+			border-left: $textfield-outline-border-height solid $textfield-outline-border-color;
+			border-right: none;
+			width: 8px;
+		}
+		.pmd-textfield-outline-right{
+			border-radius: 0 $textfield-outline-border-radius $textfield-outline-border-radius 0;
+			border-left: none;
+			border-right: $textfield-outline-border-height solid $textfield-outline-border-color;
+			flex-grow: 1;
+		}
+		.pmd-textfield-outline-middle{
+			padding-left: $textfield-outline-border-radius;
+			padding-right: $textfield-outline-border-radius;
+			border-top: none;
+		}
+		&.pmd-textfield-floating-label{
+			label{
+				@include transform-translateY(14px);
+				&.col-form-label-lg{
+					@include transform-translateY(18px);
+				}
+				&.col-form-label-sm{
+					@include transform-translateY(7px);
+				}
+			}
+			.pmd-textfield-outline-middle{
+				border-top: $textfield-outline-border-height solid $textfield-outline-border-color;
+			}
+			&.pmd-textfield-floating-label-completed{
+				label{
+					transform: translateY(-11px);
+				}
+				.pmd-textfield-outline-middle{
+					border-top: none;
+				}
+			}
+		}	
+		&.pmd-textfield-floating-label-active{
+			label{
+				color: $textfield-outline-focused-bg;
+				transform: translateY(-11px);
+			}
+			.pmd-textfield-outline-left,
+			.pmd-textfield-outline-right,
+			.pmd-textfield-outline-middle{
+				border-top: $textfield-outline-border-focused-height solid $textfield-outline-focused-bg;
+				border-bottom: $textfield-outline-border-focused-height solid $textfield-outline-focused-bg;
+			}
+			.pmd-textfield-outline-left{
+				border-left: $textfield-outline-border-focused-height solid $textfield-outline-focused-bg;
+			}
+			.pmd-textfield-outline-right{
+				border-right: $textfield-outline-border-focused-height solid $textfield-outline-focused-bg;
+			}
+			.pmd-textfield-outline-middle{
+				border-top: none;
+			}	
+		}
+		&.pmd-textfield-floating-label-active{
+			.form-control,
+			.custom-select{
+				border:$textfield-outline-border-focused-height solid $textfield-outline-focused-bg;
+				padding:$textfield-outline-no-floating-focused-padding-y $textfield-outline-no-floating-focused-padding-x;
+			}
+		}
+		&.pmd-textfield-is-valid{
+			.valid-feedback{
+				display: block;
+			}
+			.pmd-textfield-outline-left,
+			.pmd-textfield-outline-right,
+			.pmd-textfield-outline-middle{
+				border-color:theme-color("success");
+			}
+			label{
+				color:theme-color("success");
+			}
+		}
+		&.pmd-textfield-is-invalid{
+			.invalid-feedback{
+				display: block;
+			}
+			.pmd-textfield-outline-left,
+			.pmd-textfield-outline-right,
+			.pmd-textfield-outline-middle{
+				border-color:theme-color("danger");
+			}
+			label{
+				color:theme-color("danger");
+			}
+		}
+	}
+
+	
+
+	// Textfield Filled
+	&.pmd-textfield-filled {
+		position: relative;
+		.form-control,
+		.custom-select{
+			background-color: $textfield-filled-bg;
+			padding:$textfield-filled-no-floating-padding-y $textfield-filled-no-floating-padding-x;
+			height: $textfield-filled-height;
+		}
+		.form-control-sm{
+			padding:$textfield-outline-no-floating-padding-y-sm $textfield-outline-no-floating-padding-x-sm;
+			height: $textfield-outline-height-sm;
+		}
+		.pmd-textfield-filled-wrapper{
+			background-color: $textfield-filled-bg;
+			border-radius: $textfield-filled-border-radius $textfield-filled-border-radius 0 0;
+			position: relative;
+			display: flex;
+			.form-control:not([placeholder]),
+			.custom-select:not([placeholder]){
+				padding:$textfield-filled-padding-top $textfield-filled-padding-x $textfield-filled-padding-bottom $textfield-filled-padding-x;
+				background-color: transparent;
+			}
+			textarea.form-control:not([placeholder]){
+				display: inline-flex;
+				margin-top: $textfield-filled-padding-top;
+				padding-top: 0;
+			}
+			label{
+				padding-left: $textfield-filled-padding-x;
+				display: flex; 
+				position: absolute;
+				right: 0;
+				left: 0;
+				box-sizing: border-box;
+				width: 100%;
+				max-width: 100%;
+				height: 100%;
+				text-align: left;
+				pointer-events: none;
+				transform: translateY(8px);
+				font-size: $textfield-filled-label-font-size;
+				&.col-form-label{
+					font-size: inherit;
+				}
+			}
+		}
+		&.pmd-textfield-floating-label{
+			label{
+				@include transform-translateY(18px);
+				font-size: $textfield-floating-label-font-size;
+				&.col-form-label-lg{
+					font-size: $textfield-font-size-lg; 
+					@include transform-translateY(22px);
+				}
+				&.col-form-label-sm{
+					font-size: $textfield-font-size-sm; 
+					@include transform-translateY(13px);
+				}
+			}
+			&.pmd-textfield-floating-label-completed{
+				label{
+					transform: translateY(8px);
+					font-size: $textfield-filled-label-font-size;
+				}
+				&.col-form-label-sm{
+					@include transform-translateY(8px);
+				}
+			}
+		}
+		&.pmd-textfield-floating-label-active{
+			label{
+				color: $textfield-outline-focused-bg;
+				&.is-invalid{
+					color:theme-color("danger");
+				}
+				&.is-valid{
+					color:theme-color("success");
+				}
+			}
+		}
+		.pmd-textfield-focused{
+			left: 0;
+			position: absolute;
+			bottom: 0;
+			top: inherit;
+			width: auto;
+			right: 0;
+			height: $textfield-filled-focused-border-height;
+		}
+	}
+}
+
+.pmd-textfield-outline,
+.pmd-custom-file-outline{
+	.form-text,
+	.valid-feedback,
+	.invalid-feedback {
+		padding-left: $textfield-outline-padding-x;
+	}
+}
+
+.pmd-textfield-filled,
+.pmd-custom-file-filled {
+	.form-text,
+	.valid-feedback,
+	.invalid-feedback {
+		padding-left: $textfield-filled-padding-x;
+	}
+}
+
+// floating label
+.pmd-textfield-floating-label {
+	position: relative;
+	label {
+		@include transform-translateY(26px);
+		font-size: $textfield-floating-label-font-size; 
+		transition-duration: 0.2s; 
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		&.col-form-label-lg{
+			font-size: $textfield-font-size-lg;  
+			@include transform-translateY(30px);
+		}
+		&.col-form-label-sm{
+			font-size: $textfield-font-size-sm; 
+			@include transform-translateY(26px);
+		}
+	}
+	.form-control{
+		position: relative;
+	}
+	&.pmd-textfield-floating-label-completed {
+		label {
+			@include transform-translateY(0px); 
+			font-size:$textfield-label-font-size; 
+			color:$textfield-label-color;
+			&.col-form-label-lg{
+				font-size: $textfield-floating-label-font-size-lg;
+				@include transform-translateY(0);
+			}
+			&.col-form-label-sm{
+				font-size: $textfield-floating-label-font-size-sm;
+				@include transform-translateY(0);
+			}
+		}
+	}
+}
+
+.pmd-custom-file {
+	.custom-file-input{
+		&:focus{
+			&~.custom-file-label{
+				box-shadow: none;
+				border-color:$textfield-focused-bg;
+				border-width: 2px;
+			}
+		}
+	}
+	.custom-file-label {
+		background-color: transparent; 
+		border: none; 
+		border-bottom:solid $textfield-border-height $textfield-border-color; 
+		outline: none; 
+		box-shadow:none; 
+		border-radius:0; 
+		font-size:$textfield-font-size;
+		padding:$textfield-padding-y;
+		padding-left: 0;
+		color: $textfield-color;
+		&::after {
+			border-left:none;
+			@include border-radius(4);
+			background-color:$custom-file-bg;
+			color:$custom-file-color;
+		}
+	}
+}
+
+.pmd-custom-file-outline {
+	height: $textfield-outline-height;
+	.custom-file-label {
+		height: $textfield-outline-height;
+		padding:$textfield-outline-padding-y $textfield-outline-padding-x;
+		color: $textfield-color;
+		background-color: transparent;
+		border: $textfield-outline-border-height solid $textfield-outline-border-color;
+		border-radius: $textfield-outline-border-radius;
+		&::after {
+			height: $textfield-outline-inner-height;
+			padding:$textfield-outline-padding-y $textfield-outline-padding-x;
+			border-left:none;
+			@include border-radius(4px);
+			background-color:$custom-file-bg;
+			color:$custom-file-color;
+		}
+	}
+	.custom-file-input{
+		height: $textfield-outline-height;
+		&:focus {
+			&~.custom-file-label{
+				border: $textfield-outline-border-focused-height solid $textfield-outline-focused-bg;
+				box-shadow: none;
+				outline: none;
+				&::after {
+					height: $textfield-outline-focus-height;
+				}
+			}
+		}
+	}
+}
+
+.pmd-custom-file-filled {
+	height: $textfield-filled-height;
+	.custom-file-label {
+		height: $textfield-filled-height;
+		padding:$textfield-filled-padding-y $textfield-filled-padding-x;
+		color: $textfield-color;
+		background-color: $textfield-filled-bg;
+		border: none;
+		border-bottom: $textfield-filled-border-height solid $textfield-filled-border-color;
+		border-radius: $textfield-filled-border-radius;
+		&::after {
+			height: $textfield-filled-inner-height;
+			padding:$textfield-filled-padding-y $textfield-filled-padding-x;
+			border-left:none;
+			@include border-radius(4);
+		}
+	}
+	.custom-file-input{
+		height: $textfield-filled-height;
+		&:focus {
+			&~.custom-file-label{
+				border-bottom: $textfield-filled-focused-border-height solid $textfield-focused-bg;
+				box-shadow: none;
+				outline: none;
+				&::after {
+					height: $textfield-filled-focus-height;
+				}
+			}
+		}
+	}
+}
+
+@include form-validation-state("valid", $form-feedback-valid-color);
+@include form-validation-state("invalid", $form-feedback-invalid-color);
+
+.pmd-checkbox {
+	.custom-control-input {
+	.was-validated &:invalid,
+		&.is-invalid {
+			~ .custom-control-label {
+				&::before {
+					background-color:transparent;
+					box-shadow: none;
+					border-color: $checkbox-check-color; 
+				}
+				&::after {
+					background-color:transparent;
+				}
+			}
+		}
+	}
+}	
+
+// help block
+.help-block{ font-size:14px; margin-top:0;}
+.has-error-text{ display:none;}
+
+// Dark Theme
+.text-white {
+	.pmd-textfield {
+		label {
+			color:$textfield-dark-label-color;
+			&.is-invalid{
+				color:theme-color("danger");
+			}
+			&.is-valid{
+				color:theme-color("success");
+			}
+		}
+		.custom-select {
+			background:url(../../assets/images/baseline-arrow_drop_down-white.svg) no-repeat right 0.35rem center/22px 22px;
+		}
+		.custom-select.is-invalid, 
+		.was-validated .custom-select:invalid{
+			background:url(../../assets/images/baseline-arrow_drop_down-white.svg) no-repeat right 0.35rem center/22px 22px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") #fff no-repeat center right 1.75rem/calc(.75em + .375rem) calc(.75em + .375rem);
+		}
+		.custom-select.is-valid, 
+		.was-validated .custom-select:invalid{
+			background:url(../../assets/images/baseline-arrow_drop_down-white.svg) no-repeat right 0.35rem center/22px 22px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc(.75em + .375rem) calc(.75em + .375rem);
+		}
+		.form-control,
+		.custom-select {
+			color: $textfield-dark-color;
+			border-bottom-color:$textfield-dark-border-color;
+			&:-webkit-autofill,
+			&:-webkit-autofill:hover, 
+			&:-webkit-autofill:focus {
+				-webkit-text-fill-color: $textfield-dark-color;
+			}
+			&.is-invalid{
+				border-bottom-color:theme-color("danger");
+				background-color: transparent;
+			}
+			&.is-valid{
+				border-bottom-color:theme-color("success");
+				background-color: transparent;
+			}
+		}
+		select {
+			option {
+				color: $textfield-color;
+			}
+		}
+		.form-control-plaintext {
+			color: $textfield-dark-color;
+		}
+		&.pmd-textfield-outline {
+			.pmd-textfield-outline-left,
+			.pmd-textfield-outline-right,
+			.pmd-textfield-outline-middle{
+				border-color:$textfield-dark-border-color;
+			}
+			&.pmd-textfield-floating-label-active{
+				label{
+					color: $textfield-focused-bg;
+				}
+				.pmd-textfield-outline-left,
+				.pmd-textfield-outline-right,
+				.pmd-textfield-outline-middle{
+					border-color:$textfield-focused-bg;
+				}
+			}
+			&.pmd-textfield-is-valid{
+				.pmd-textfield-outline-left,
+				.pmd-textfield-outline-right,
+				.pmd-textfield-outline-middle{
+					border-color:theme-color("success");
+				}
+				label{
+					color:theme-color("success");
+				}
+			}
+			&.pmd-textfield-is-invalid{
+				.pmd-textfield-outline-left,
+				.pmd-textfield-outline-right,
+				.pmd-textfield-outline-middle{
+					border-color:theme-color("danger");
+				}
+				label{
+					color:theme-color("danger");
+				}
+			}
+		}
+		&.pmd-textfield-filled {
+			.pmd-textfield-filled-wrapper{
+				background-color: $textfield-filled-dark-bg;
+			}
+			&.pmd-textfield-floating-label-active{
+				label{
+					&.is-invalid{
+						color:theme-color("danger");
+					}
+					&.is-valid{
+						color:theme-color("success");
+					}
+				}
+			}
+		}
+	}
+	.pmd-custom-file {
+		.custom-file-label {
+			color: $textfield-dark-color;
+			border-bottom-color:$textfield-dark-border-color;
+			&.is-invalid{
+				border-color:theme-color("danger");
+			}
+			&.is-valid{
+				border-color:theme-color("success");
+			}
+		}
+	}
+	.pmd-custom-file-outline {
+		.custom-file-label {
+			color: $textfield-dark-color;
+			border-color:$textfield-dark-border-color;
+			&.is-invalid{
+				border-color:theme-color("danger");
+			}
+			&.is-valid{
+				border-color:theme-color("success");
+			}
+		}
+	}
+	.pmd-custom-file-filled {
+		.custom-file-label{
+			color: $textfield-dark-color;
+			border-color:$textfield-dark-border-color;
+			background-color: $textfield-filled-dark-bg;
+			&.is-invalid{
+				border-color:theme-color("danger");
+			}
+			&.is-valid{
+				border-color:theme-color("success");
+			}
+		}
+	}
+}
+

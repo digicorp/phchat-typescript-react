@@ -1,0 +1,173 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): checkbox.css
+ * Copyright 2016-2019 Digicorp, Inc.
+ * Licensed under MIT (http://propeller.in/LICENSE)
+ */
+
+.pmd-checkbox-ripple-effect {
+	@include transform-translateZ(0px)
+}
+.checkbox {
+	.pmd-checkbox-ripple-effect{
+		padding-left:0;
+	}
+	.pmd-checkbox{ 
+		padding-left:0;
+	}
+}
+
+.pmd-checkbox,
+.pmd-radio{
+	&.custom-control{
+		padding-left: 0;
+	}
+	.custom-control-label{
+		position: relative;
+		padding-left: 2rem;
+		&::after{
+			width:18px; 
+			height:18px;
+			border:$custom-control-border-width solid $custom-control-border-color;
+			top:0;
+			bottom: 0;
+			margin: auto;
+			left: 0;
+		}
+	}
+	.custom-control-input:checked~.custom-control-label::after{
+		border-color:$custom-control-checked-border-bg;
+	}
+	.custom-control-input:focus~.custom-control-label::before{
+		box-shadow:none;
+	}
+	.custom-control-input:disabled~.custom-control-label {
+		color:$custom-control-disabled-color;
+		&::after{
+			border-color:$custom-control-disabled-border-color;
+		}
+	}
+	.ink {
+	  background-color: $custom-control-ink-bg;
+	}
+	.invalid-feedback{
+		padding-left: 2rem;
+	}
+}
+.pmd-radio {
+	.custom-control-label {
+		&::after{
+			border-radius:18px;
+		}
+		&::before{
+			top:0; 
+			background:$radio-check-color;
+			border-radius:4px;
+			transition:.2s ease-in-out; 
+			height:8px; 
+			width:8px; 
+			left:5px; 
+			@include transform-scale(0);
+			bottom: 0;
+			margin: auto;
+		}
+	}
+	.custom-control-input:checked~.custom-control-label::after {
+		background-color: transparent;
+		background-image: none;
+	}
+	.custom-control-input:checked~.custom-control-label::before {
+		@include transform-scale(1);
+		background-color:$radio-check-color;
+		border-color:$radio-check-color;
+	}
+}
+
+.pmd-checkbox {
+	.custom-control-label {
+		&::after{
+			border-radius: $checkbox-border-radius;
+		}
+		&::before{
+			height: 12px; 
+			top: -2px;
+			bottom: 0;
+			margin: auto;
+			left: 6px;
+			width: 6px;
+			transition: all .2s;
+			opacity: 0;
+			@include transform-rotate(45deg);
+			border-radius:0;
+			z-index: 1;
+			background-color:transparent;
+		}
+	}
+	.custom-control-input {
+		&:checked~.custom-control-label{
+			&::after {
+				background-color:$checkbox-checked-bg;
+				background-image:none;
+			}
+			&::before {
+				color: $checkbox-check-color; 
+				background-image:none;
+				border-image: none; 
+				border-style: none solid solid none; 
+				border-width: 0 $checkbox-check-size $checkbox-check-size 0;
+				opacity: 1;
+				background-color:transparent;
+				border-color: $checkbox-check-color;
+			}
+		}
+	}
+}
+
+/* hover style just for information */
+.pmd-checkbox.pmd-checkbox-ripple-effect{
+	position:relative;
+}
+.pmd-checkbox .pmd-checkboxwrap{ 
+	position:absolute; 
+	z-index:-1; 
+	height:40px; 
+	width:40px; 
+	border-radius:50%; 
+	overflow:hidden; 
+	top:-8px; 
+	left:-11px;
+}
+.checkbox-inline.pmd-checkbox{
+	padding-left: 0;
+}
+.pmd-checkbox-ripple-effect .ink{ 
+	background-color:rgba(0, 0, 0, 0.2);
+}
+
+// card inverse disabled checkbox 
+.text-white{
+	.pmd-checkbox,
+	.pmd-radio{
+		.custom-control-label {
+			&::after{
+				width:18px; 
+				height:18px;
+				border:$custom-control-border-width solid $custom-control-inverse-border-color;
+			}
+		}
+		.custom-control-input:checked~.custom-control-label::after{
+			border-color:$custom-control-inverse-checked-bg;
+		}
+		.custom-control-input:focus~.custom-control-label::before{
+			box-shadow:none;
+		}
+		.custom-control-input:disabled~.custom-control-label {
+			color:$custom-control-inverse-disabled-color;
+			&::after{
+				border-color:$custom-control-inverse-disabled-border-color;
+			}
+		}
+		.ink {
+		  background-color: $custom-control-ink-dark-bg;
+		}
+	}
+}

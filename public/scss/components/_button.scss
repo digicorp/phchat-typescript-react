@@ -1,0 +1,48 @@
+.pmd-btn-fab {
+    &.btn-gray-light {
+        background: $gray-200;
+        border-color: $gray-200;
+        color: pmd-theme-color(secondary, dark);
+        @include hover {
+            color: pmd-theme-color(primary, dark);
+        }
+    }
+}
+.pmd-btn-flat {
+    &.btn-dark {
+        background-color: $gray-200;
+        border-color: $gray-200;
+    }
+}
+
+
+.btn {
+    // primary light button hover color
+    &.btn-primary-light{
+        border-color: transparent;
+        color: $primary;
+        &:hover, &:active, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+            color: pmd-theme-color(primary, light);    
+            background: $primary;
+        }
+    }
+
+    &.btn-outline-primary {
+        border-color: $primary;
+        background: none;
+        &:hover, &:active, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+            background: $primary;
+        }
+        &:disabled {
+            pointer-events: none;
+            &:hover {
+                border-color: $primary;
+                background: none;
+            }
+        }
+    }
+
+    &.btn-secondary {
+        color: $white;
+    }
+}

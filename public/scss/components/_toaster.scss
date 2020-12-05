@@ -1,0 +1,116 @@
+.Toastify__toast-container {
+    &.pmd-toast-group {
+        @include media-breakpoint-down(sm) {
+            padding: $space4;
+        }
+
+        .Toastify__toast {
+            box-shadow: $card-hover-shadow;
+            position: relative;
+            border-radius: $border-radius;
+            padding: $space16;
+
+            @include media-breakpoint-down(sm) {
+                padding: $space8;
+            }
+
+            .Toastify__close-button {
+                position: absolute;
+                right: 6px;
+                top: 6px;
+                color: inherit;
+                opacity: 0.6;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background: none !important;
+                    opacity: 0.95;
+                    outline: 0;
+                }
+            }
+
+            .Toastify__toast-body {
+                display: flex;
+                padding: 0;
+                position: relative;
+                align-items: center;
+
+                &::before {
+                    font-family: 'Material Icons';
+                    margin-right: $space8;
+                    font-size: 24px;
+                }
+
+                .toast-icon {
+                    padding: $space12 $space10;
+                }
+
+                .toast-content {
+                    flex-grow: 1;
+                    padding: $space12;
+
+                    h4 {
+                        color: inherit;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            // Toast success
+            &.Toastify__toast--success {
+                color: #155724;
+                background-color: #d4edda;
+                border: none;
+
+                .Toastify__toast-body {
+                    &::before {
+                        content: 'check_circle';
+                    }
+                }
+            }
+
+            // Toast error
+            &.Toastify__toast--error {
+                color: #852d12;
+                background-color: #ffddd3;
+                border: none;
+
+                .Toastify__toast-body {
+                    &::before {
+                        content: 'error';
+                    }
+                }
+            }
+
+            // Toast warning
+            &.Toastify__toast--warning {
+                color: #856404;
+                background-color: #fff3cd;
+                border: none;
+
+                .Toastify__toast-body {
+                    &::before {
+                        content: 'warning';
+                    }
+                }
+            }
+
+            // Toast info
+            &.Toastify__toast--info {
+                color: #02587f;
+                background-color: #cdeefd;
+                border: none;
+
+                .Toastify__toast-body {
+                    &::before {
+                        content: 'info';
+                    }
+                }
+            }
+        }
+    }
+}

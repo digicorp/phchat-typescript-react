@@ -1,0 +1,118 @@
+// File upload
+.custom-upload {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: $space24;
+    width: 100%;
+
+    // Uploaded file
+    &.custom-uploaded-file {
+        cursor: auto;
+        pointer-events: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding: $space16;
+    }
+
+    .custom-upload-content {
+        font-size: $font-size-base;
+        font-weight: $font-weight-normal;
+        margin: 0;
+        text-align: center;
+        position: relative;
+        padding-top: 56px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            top: 0;
+            background-image: url('../../public/assets/img/page/ic_file-upload.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+        }
+
+        .custom-upload-browse {
+            text-decoration: underline;
+        }
+    }
+}
+
+.custom-upload-wrap {
+    border: 2px dashed $border-color;
+    border-radius: 5px;
+    background-color: pmd-theme-color(primary, light);
+    min-height: 90px;
+    position: relative;
+
+    &.custom-upload-error {
+        border-color: $danger;
+    }
+}
+
+.uploaded-file-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: $space24;
+    width: 100%;
+
+    @include media-breakpoint-down(sm) {
+        padding: $space16;
+    }
+}
+
+// Uploaded file item
+.uploaded-file-item {
+    width: 100%;
+    align-items: center;
+    position: relative;
+
+    .media-body {
+        overflow: hidden;
+        width: 100%;
+
+        .pmd-list-title {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .pmd-list-subtitle {
+            opacity: 0.7;
+        }
+    }
+
+    .media-right {
+        margin-left: $space16;
+    }
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .pmd-avatar-list-img {
+            margin-right: 0;
+            margin-bottom: $space16;
+        }
+
+        .media-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-left: 0;
+        }
+    }
+}

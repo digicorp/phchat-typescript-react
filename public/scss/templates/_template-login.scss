@@ -1,0 +1,143 @@
+.login-bg {
+    background-image: url('../assets/img/login/login-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-link,
+.forgot-password-link,
+.signup-link {
+    font-weight: $font-weight-semibold;
+}
+
+@include media-breakpoint-down(sm) {
+
+    .forgot-password-link,
+    .pmd-checkbox .custom-control-label {
+        font-size: $font-size-sm;
+    }
+}
+
+// Login 
+.login-v1 {
+    min-height: 100vh;
+
+    .login-card {
+        width: 100%;
+        min-height: 100vh;
+
+        .pmd-card {
+            width: 100%;
+        }
+
+        .card-body {
+            position: relative;
+
+            form {
+                width: 100%;
+            }
+        }
+
+        .card-footer {
+            .pmd-footer {
+                position: relative;
+            }
+        }
+    }
+
+    // Login Background Right
+    .login-bg-color {
+        padding: 0;
+    }
+
+    .login-bg {
+        width: 100%;
+        display: flex;
+        padding: 0 $space24;
+        background-color: theme-color("dark");
+
+        .card-body {
+            margin: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .login-content {
+            max-width: 470px;
+            width: 100%;
+            margin: 40px 40px 0px 40px;
+
+            @include media-breakpoint-down(lg) {
+                margin: 0;
+            }
+
+            p.lead {
+                @include media-breakpoint-down(md) {
+                    font-size: $font-size-base;
+                }
+            }
+        }
+
+        .pmd-list {
+            li {
+                margin-bottom: $space16;
+
+                @include media-breakpoint-down(md) {
+                    font-size: $font-size-sm;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.login-section {
+    max-width: 500px;
+    flex-grow: 1;
+    margin-left: 26rem;
+    margin-right: 60px;
+    justify-content: center;
+    display: flex;
+    min-height: 100%;
+    box-shadow: none;
+    border: none;
+
+    &:hover {
+        box-shadow: none;
+    }
+
+    @include media-breakpoint-down(lg) {
+        margin-right: 0;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-right: 0;
+        margin-left: 0;
+        margin: 0 auto;
+    }
+
+    .navbar-brand {
+        .img-fluid {
+            height: 80px;
+        }
+    }
+
+    .card-footer {
+        position: absolute;
+        bottom: 0;
+
+        @include media-breakpoint-down(sm) {
+            position: relative;
+        }
+    }
+
+    .form-group {
+        label {
+            font-weight: $font-weight-semibold;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): Chip.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+// Chips Css 
+.pmd-chip {
+	border-radius: $chip-border-radius;
+	box-sizing: border-box; 
+	line-height:$chip-line-height;
+	padding: 0 $chip-spacer-right 0 $chip-spacer-left;
+	text-transform:capitalize; 
+	background:$chip-bg; 
+	color:$chip-color; 
+	display:inline-flex;
+	align-items: center;
+	cursor:default;
+	vertical-align: middle;
+	border: $chip-border-width solid $chip-bg;
+	@include hover-focus {
+		background-color: darken($chip-bg, 10%);
+		border-color: darken($chip-bg, 10%);
+	}
+	.material-icons{
+		margin-right:4px;
+	}
+}
+.pmd-chip-action{
+	i{ 
+		font-size:$chip-action-font-size;
+		color:$chip-action-color;
+		background-color: $chip-action-bg;
+		border-radius:50%; 
+		padding:2px; 
+		margin-left:5px;
+	}
+	.material-icons{ 
+		&:hover{
+			background-color: darken($chip-action-bg, 10%);
+		}
+	}
+} 
+.pmd-chip-contact { 
+	margin-right: 5px; 
+	width: $chip-contact-size; 
+	border-radius:50%;
+	margin-left: -$chip-spacer-left;
+}
+
+// Colors
+@each $color, $value in $theme-colors {
+	.pmd-chip-#{$color}{
+		@include badge-variant($value);
+	}
+}
+
+// Outline Colors
+@each $color, $value in $theme-colors {
+	.pmd-chip-outline-#{$color}{
+		background-color: transparent;
+		@include badge-outline-variant($value);
+	}
+}

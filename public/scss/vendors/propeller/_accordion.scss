@@ -1,0 +1,57 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): accordion.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+.pmd-accordion {
+	.card {
+		position: relative;
+		margin: $accordion-panel-margin-y $accordion-panel-margin-x;
+		border: none;
+		@include border-radius(0px);
+		@include pmd-box-shadow($accordion-box-shadow);
+		@include transition($transition-base);
+		.card-header{
+			padding: 0;
+			background-color: transparent;
+			border-color: transparent;
+			.btn{
+				display: flex;
+				padding: $accordion-heading-padding-y $accordion-heading-padding-x;
+				line-height: $accordion-heading-line-height;
+				font-size: $accordion-heading-font-size;
+				color: $accordion-heading-color;
+				text-decoration:none;
+				font-weight:$accordion-heading-font-weight;
+				width: 100%;
+				text-align: left;
+				white-space:inherit;
+				@include hover-focus {
+					color: inherit;
+				}
+			}
+		}
+		&.active {
+			.material-icons {
+				&.pmd-accordion-arrow {
+					@include transform-rotate(180deg);
+				}
+			}
+		}
+	}
+}
+
+// Accordion Nospace
+.pmd-accordion-nospace {
+	.card {
+		margin: 0;
+	}
+}
+
+// Accordion Actie Arrow
+.pmd-accordion-arrow {
+  	display: flex;
+	margin-left: auto;
+}

@@ -1,0 +1,54 @@
+// Stepper
+.pmd-stepper {
+    &.ai-steppper {
+        .nav-item {
+            &.completed {
+                .pmd-stepper-item {
+                    cursor: pointer;
+                }
+            }
+            @include media-breakpoint-down(md) {
+                justify-content: center;
+                &:not(:last-child):after{
+                    left: 50%;
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    width: 50%;
+                }
+                &:not(:first-child):before{
+                    left: 0;
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    width: 50%;
+                }
+            }
+           
+            .pmd-stepper-item {
+                @include media-breakpoint-down(md) {
+                    padding: $space16 0;   
+                    align-items: center;
+                    position: relative;
+                    z-index: 2;                              
+                }
+                .pmd-stepper-media {
+                    font-size: 18px;
+                    @include media-breakpoint-down(md) {
+                        font-size: $font-size-base;
+                        width: 32px;
+                        height: 32px;
+                        margin: 0;
+                    }
+                }
+                .pmd-stepper-title {
+                    font-size: $font-size-sm;
+                    @include media-breakpoint-down(md) {
+                        display: none;
+                    }
+                }
+                
+            }
+        }
+    }
+}

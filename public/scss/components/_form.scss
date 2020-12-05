@@ -1,0 +1,46 @@
+.field-required{
+	color: theme-color('danger');
+}
+.text-danger{
+	h3, p {
+		color: theme-color('danger');
+	}
+}
+
+.field-required{
+	color: theme-color('danger');
+}
+.text-danger{
+	h3, p {
+		color: theme-color('danger');
+	}
+}
+
+.multiselectDomain.css-2b097c-container {
+	.css-yk16xz-control {
+		border-width: 2px;
+		border-color: rgba(23, 39, 61, 0.12) !important;
+	}
+	.css-g1d714-ValueContainer {
+		padding: 0.5rem 1rem !important;
+		.css-1wa3eu0-placeholder {
+			color: rgba(23,39,61,0.5);
+			font-size: 1rem;
+			font-weight: 400;
+		}
+	}
+	.css-1n7v3ny-option {
+		background: $primary-light;
+		color: $primary;
+		font-size: $font-size-sm;
+	}
+
+	.css-yt9ioa-option {
+		font-size: $font-size-sm;
+		color: $body-color;
+	}
+
+	.css-4ljt47-MenuList {
+		max-height: 200px;
+	}
+}

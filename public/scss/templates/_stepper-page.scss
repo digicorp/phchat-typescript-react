@@ -1,0 +1,31 @@
+//Stepper page
+#domain {
+    .pmd-radio-card {
+        .pmd-card-icon {
+            .pmd-icon-circle.pmd-icon-md {
+                overflow: hidden;
+                padding: $space6 $space12;
+            }
+        }
+    }
+}
+
+// Animate image
+.animate-progress-image {
+    img {
+        max-width: 450px;
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
+        }
+    }
+}
+
+// Last step generated model data
+.model-data-desc {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+        max-width: 100%;
+    }
+}

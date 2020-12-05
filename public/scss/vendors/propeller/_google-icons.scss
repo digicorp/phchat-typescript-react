@@ -1,0 +1,124 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): google-icons.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+// Rules for sizing the icon
+.material-icons.pmd-xs, .material-icons.md-18 {
+	font-size: $material-icons-xs;
+}
+.material-icons.pmd-sm, .material-icons.md-24 {
+	font-size: $material-icons-sm;
+}
+.material-icons.pmd-md,.material-icons.md-36 {
+	font-size: $material-icons-md;
+}
+.material-icons.pmd-lg,.material-icons.md-48 {
+	font-size: $material-icons-lg;
+}
+
+// Rules for using icons as black on a light background.
+.md-dark {
+	color: $material-icons-dark-color;
+	svg {
+		fill:$material-icons-dark-color;
+	}
+}
+.md-dark.md-inactive {
+	color: $material-icons-dark-inactive-color;
+	svg {
+		fill:$material-icons-dark-inactive-color;
+	}
+}
+
+// Rules for using icons as white on a dark background.
+.md-light {
+	color: $material-icons-light-color;
+	svg {
+		fill:$material-icons-light-color;
+	}
+}
+.md-light.md-inactive {
+	color: $material-icons-light-inactive-color;
+	svg {
+		fill:$material-icons-light-inactive-color;
+	}
+}
+
+
+// Icon Sizes
+.pmd-icon-xs {
+	display: inline-flex;
+	font-size: $material-icons-xs;
+	svg, img {
+		height: $material-icons-xs;	
+	}
+}
+.pmd-icon-sm {
+	display: inline-flex;
+	font-size: $material-icons-sm;
+	svg, img {
+		height: $material-icons-sm;	
+	}
+}
+.pmd-icon-md {
+	display: inline-flex;
+	font-size: $material-icons-md;
+	svg, img {
+		height: $material-icons-md;	
+	}
+}
+.pmd-icon-lg {
+	display: inline-flex;
+	font-size: $material-icons-lg;
+	svg, img {
+		height: $material-icons-lg;	
+	}
+}
+.pmd-icon-xl {
+	display: inline-flex;
+	font-size: $material-icons-xl;
+	svg, img {
+		height: $material-icons-xl;	
+	}
+}
+
+// Card Icon Circle
+.pmd-icon-circle {
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: $pmd-icon-circle-size;
+	width: $pmd-icon-circle-size;
+	svg, img {
+		height: 50%;
+	}
+	&.pmd-icon-xl {
+		height: $pmd-icon-circle-size-xl;
+		width: $pmd-icon-circle-size-xl;
+	}
+	&.pmd-icon-lg {
+		height: $pmd-icon-circle-size-lg;
+		width: $pmd-icon-circle-size-lg;
+	}
+	&.pmd-icon-md {
+		height:$pmd-icon-circle-size-md;
+		width:$pmd-icon-circle-size-md;
+	}
+	&.pmd-icon-sm {
+		height:$pmd-icon-circle-size-sm;
+		width:$pmd-icon-circle-size-sm;
+	}
+	&.pmd-icon-xs {
+		height:$pmd-icon-circle-size-xs;
+		width:$pmd-icon-circle-size-xs;
+	}
+}
+
+.pmd-icon-circle-lg {
+	width: 72px;
+	height: 72px;
+}

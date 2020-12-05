@@ -1,0 +1,12 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): popover.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+@each $color, $value in $theme-colors {
+	.popover.#{$color} {
+		@include popover-variant($value, theme-color-level($color, $alert-border-level), $value);
+	 }
+}

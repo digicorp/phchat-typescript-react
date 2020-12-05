@@ -1,0 +1,38 @@
+// Domain listing page
+.domain-list-item {
+    .domain-actions {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        opacity: 0;
+        @include transition($transition-base);
+        @include media-breakpoint-down(md) {
+            opacity: 1;
+        }
+    }
+    &:hover {
+        .domain-actions {
+            opacity: 1;
+            @include transition($transition-base);
+        }
+    }
+}
+
+//Subdomain listing page
+.subdomain-list-item {
+    .subdomain-actions {
+        min-width: 90px;
+        margin-left: $space16;
+        opacity: 0;
+        @include transition($transition-base);
+        @include media-breakpoint-down(md) {
+            opacity: 1;
+        }
+    }
+    &:hover {
+        .subdomain-actions {
+            opacity: 1;
+            @include transition($transition-base);
+        }
+    }
+}

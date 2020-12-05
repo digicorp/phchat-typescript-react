@@ -1,0 +1,52 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): badge.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+.badge { 
+	display: inline-block; 
+	vertical-align: baseline;
+}
+.badge:hover { text-decoration: none; cursor: pointer;}
+
+// Notification Badge css
+.pmd-badge {
+	display:inline-block; 
+	position:relative;
+	font-size: $notification-icon-size;
+	background-color: transparent;
+	&[data-badge]::after {
+		background: $notification-badge-bg; 
+		color: $notification-badge-color; 
+		font-family: $notification-badge-font; 
+		font-size: $notification-badge-font-size; 
+		font-weight: $notification-badge-font-weight; 
+		height: $notification-badge-size;
+		width: $notification-badge-size;
+		line-height: $notification-badge-size;
+		border-radius: 50%; 
+		right: -24px; 
+		top: -10px; 
+		content: attr(data-badge); 
+		position: absolute; 
+		text-align: center;
+	}
+	&.pmd-badge-overlap::after {
+		right: -10px;
+	}
+}
+
+// Colors
+@each $color, $value in $theme-colors {
+	.badge-#{$color} {
+		@include badge-variant($value);
+	}
+	.badge-outline-#{$color} {
+		@include badge-outline(theme-color-level($color, $alert-bg-level), theme-color-level($color, $badge-border-level), $value);
+	}
+	.pmd-badge-#{$color}[data-badge]::after{
+		@include notification-badge($value);
+	}
+}

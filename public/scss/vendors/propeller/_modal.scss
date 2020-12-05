@@ -1,0 +1,137 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): modal.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+.pmd-modal {
+	.modal-content{ 
+		border-radius:$modal-border-radius;
+		display: block;
+	}
+	.modal-header {
+		border-bottom: $modal-header-border-width solid rgba(0, 0, 0, 0);
+		border-top-left-radius: $modal-border-radius;
+		border-top-right-radius: $modal-border-radius;
+		padding: $modal-header-padding-y $modal-header-padding-x 0 $modal-header-padding-y;
+		margin-bottom: $modal-spacer-y;
+		@include border-top-radius($card-border-radius);
+		.dropdown {
+			.dropdown-toggle {
+				color: inherit;
+			}
+		}
+		&.pmd-modal-border{
+			border-bottom:$modal-header-border-width solid $modal-header-border-color;
+			padding-bottom:$modal-header-padding-y;
+			margin-bottom: 0;
+		}
+		.close{
+			outline: none;
+		}
+	}
+	.modal-footer {
+		padding:0 $modal-spacer $modal-spacer $modal-spacer;
+		margin-top: $modal-spacer;
+		border: none;
+		&.pmd-modal-border {
+			border-top:$modal-action-border-width solid $modal-action-border-color;
+			padding-top:$modal-header-padding-y;
+			margin-top: 0;
+		}
+		.btn {
+			margin-right: $card-actions-spacer-x;
+			margin-left: $card-actions-spacer-x;
+			min-width: inherit;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+			  margin-right: 0;
+			}
+			&.pmd-btn-flat {
+				margin-top:-$btn-padding-y;
+				margin-bottom:-$btn-padding-y;
+				&:first-child {
+					margin-left:-$card-actions-padding-y;
+				}
+			}
+			&.pmd-btn-fab {
+				padding: 0;
+			}
+		}
+	}
+	.modal-body { 
+		margin-bottom:$modal-spacer-y;
+		margin-top:$modal-spacer-y;
+		padding:0 $modal-spacer-x;
+		> p:last-child{
+			margin-bottom:0;
+		}
+		.custom-control{
+			padding: .75rem $modal-spacer-y;
+			margin-left: -$modal-spacer-y;
+			margin-right: -$modal-spacer-y;
+		}
+	}
+	.pmd-modal-list { 
+		margin-bottom:$modal-spacer-y; 
+		margin-top:$modal-spacer-y;
+	}
+.modal{
+	.radio,
+	.checkbox{
+		margin:$modal-radio-checkbox-spacer-y 0;
+	}
+	.radio-options {
+		> label{
+			padding-left:32px;
+		}
+	}
+	.list-group.pmd-list-avatar{
+		margin-bottom:$modal-list-avatar-margin-bottom;
+		padding:0
+	}
+	&.list-group{
+		&:last-child{
+			margin-bottom:0;
+		}
+	}
+}
+/* Form css */
+.form-horizontal {
+	.form-group{
+		margin-left:0;
+		margin-right:0;
+	}
+}
+
+// Card list border
+.pmd-list {
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+	&.pmd-list-border {
+		.list-group-item {
+			border-right: 0;
+			border-left: 0;
+			border-radius: 0;
+		}
+		&:first-child {
+			.list-group-item {
+				&:first-child{
+					border-top: 0;
+				}
+			}
+		}
+		&:last-child {
+			.list-group-item {
+				&:last-child{
+					border-bottom:0;
+				}
+			}
+		}		
+	}
+}
+
+}
+

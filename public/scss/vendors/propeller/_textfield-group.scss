@@ -1,0 +1,419 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): textfield.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+// paper input group
+.pmd-input-group {
+	.input-group-text {
+		padding: $textfield-padding-y 0 $textfield-padding-y 0;
+		background-color: transparent;
+		border-color: transparent;
+		border-top: none;
+		font-weight: 500;
+	}
+	.input-group-append {
+		.input-group-text{
+			padding-left: $pmd-input-group-icon-padding-right;
+		}
+	}
+	.pmd-textfield-focused{
+		top: 0;
+	}
+	.input-group-prepend {
+		.input-group-text {
+			padding-right: $pmd-input-group-icon-padding-right;
+		}
+		~ .pmd-textfield {
+			label {
+				padding-left:$textfield-padding-y;
+			}
+			.form-control,
+			.custom-select {
+				padding-left:$textfield-padding-y;
+			}
+		}
+		~ .pmd-custom-file {
+			.custom-file-label{
+				padding-left:$textfield-padding-y;
+			}
+		}
+	}
+	.input-group-prepend,
+	.input-group-append{
+		align-items: flex-end;
+	}
+	.pmd-textfield {
+		align-items:flex-end;
+		flex: 1 1 auto;
+		.custom-select {
+			display: block;
+			margin-bottom: -2px;
+		}
+		.form-control {
+			padding:$textfield-padding-y;
+			margin-bottom: -2px;
+			padding-left: 0;
+		}
+		&.pmd-textfield-floating-label{
+			label {
+				display: flex;
+				position: absolute;
+				right: 0;
+				left: 0;
+				box-sizing: border-box;
+				width: 100%;
+				max-width: 100%;
+				height: 100%;
+				text-align: left;
+				pointer-events: none;
+				@include transform-translateY(28px);
+			}
+			.form-control,
+			.custom-select {
+				padding-top:$input-group-floating-label-padding-top;
+				padding-bottom:$input-group-floating-label-padding-bottom;
+				padding-right: $textfield-padding-y;
+				height: $input-group-height;
+			}
+			&.pmd-textfield-floating-label-completed {
+				label {
+					@include transform-translateY(5px); 
+				}
+			}
+		}
+	}
+	
+	// Input group icon
+	&.pmd-input-group-icon {
+		.input-group-text {
+			padding: $textfield-padding-y 0;
+			background-color: transparent;
+			border-color: transparent;
+			.material-icons{
+				vertical-align: middle;
+			}
+		}
+		.input-group-prepend {
+			padding-right:$pmd-input-group-icon-padding-right;
+			~ .pmd-textfield {
+				label {
+					padding-left:0;
+				}
+				.form-control,
+				.custom-select {
+					padding-left:0;
+				}
+			}
+		}
+		.input-group-append {
+			position: absolute;
+			right:0;
+			bottom: 4px;
+		}
+	}
+	
+	&.input-group-lg .form-control,
+	&.input-group-lg .input-group-prepend > .input-group-text,
+	&.input-group-lg .input-group-append > .input-group-text,
+	&.input-group-lg .input-group-prepend > .btn,
+	&.input-group-lg .input-group-append > .btn {
+		font-size: $textfield-font-size-lg; 
+		padding:$textfield-padding-y $textfield-padding-x;
+	}
+
+	&.input-group-sm .form-control,
+	&.input-group-sm .input-group-prepend > .input-group-text,
+	&.input-group-sm .input-group-append > .input-group-text,
+	&.input-group-sm .input-group-prepend > .btn,
+	&.input-group-sm .input-group-append > .btn {
+		font-size: $textfield-font-size-sm;
+		padding:$textfield-padding-y $textfield-padding-x;
+	}
+}
+
+.pmd-input-group,
+.pmd-input-group-outline,
+.pmd-input-group-filled{
+	.pmd-checkbox,  
+	.pmd-radio {
+		.custom-control-label {
+			position:static;
+			padding-left:1.2rem;
+		}
+	}
+	> .pmd-textfield{
+		position: relative;
+		flex: 1 1 auto;
+		width: 1%;
+		margin-bottom: 0;
+	}
+	.pmd-textfield-is-invalid{
+		~ .invalid-feedback{
+			padding-left: 38px;
+		}
+	}
+}
+
+.pmd-input-group-outline:not(.pmd-input-group-icon){
+	.pmd-textfield-outline:not(:last-child){
+		.pmd-textfield-outline-right {
+			border-radius: 0;
+		}
+	}
+	.pmd-textfield-outline:not(:first-child){
+		.pmd-textfield-outline-left {
+			border-radius: 0;
+		}
+	}
+}
+
+.pmd-input-group-outline{
+	>.pmd-textfield{
+		+ .pmd-textfield {
+			margin-left: -$textfield-outline-border-height;
+		}
+	}
+	.input-group-text{
+		border-color: $textfield-outline-border-color;
+		background-color: transparent;
+	}
+	>.pmd-textfield-outline:not(:first-child) {
+		.form-control,
+		.custom-select{
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+	>.pmd-textfield-outline:not(:last-child) {
+		.form-control,
+		.custom-select{
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+	
+	&.pmd-input-group-icon{
+		.input-group-append,
+		.input-group-prepend{
+			position: absolute;
+			height: 100%;
+			.input-group-text {
+				background-color: transparent;
+				border: none;
+			}
+		}
+		.input-group-append{
+			right: 0;
+		}
+		.input-group-prepend{
+			&~.pmd-textfield-outline{
+				.custom-select, 
+				.form-control{
+					padding-left: 44px;
+				}
+				&.pmd-textfield-floating-label{
+					label{
+						padding-left: 34px;
+					}
+					&.pmd-textfield-floating-label-completed {
+						label{
+							padding-left: 0;
+						}	
+					}
+				}
+			}
+		}
+	}
+
+	&.input-group-sm{
+		.custom-select,
+		.form-control:not(textarea){
+			height:$input-group-outline-inner-height-sm;
+			padding:$input-group-outline-no-floating-padding-y-sm $input-group-outline-padding-x-sm;
+		}
+		.pmd-textfield-outline-wrapper{
+			.custom-select:not([placeholder]),
+			.form-control:not([placeholder]){
+				font-size: $textfield-font-size-sm;
+				padding:$input-group-outline-padding-y-sm $input-group-outline-padding-x-sm;
+			}
+		}
+		.input-group-append,
+		.input-group-prepend{
+			> .btn,
+			>.input-group-text{
+				font-size: $textfield-font-size-sm;
+				padding:$input-group-outline-no-floating-padding-y-sm $input-group-outline-padding-x-sm;
+			}
+		}
+		.pmd-textfield-floating-label {
+			label {
+				font-size: $textfield-font-size-sm; 
+				@include transform-translateY(7px);
+			}
+			&.pmd-textfield-floating-label-completed {
+				label {
+					font-size: $textfield-floating-label-font-size-sm;
+				}
+			}
+		}
+	}
+
+	&.input-group-lg{
+		.custom-select,
+		.form-control:not(textarea){
+			font-size: $textfield-font-size-lg;
+			height:$input-group-outline-inner-height-lg;
+			padding:$input-group-outline-no-floating-padding-y-lg $input-group-outline-padding-x-lg;
+		}
+		.pmd-textfield-outline-wrapper{
+			.custom-select:not([placeholder]),
+			.form-control:not([placeholder]){
+				padding:$input-group-outline-padding-y-lg $input-group-outline-padding-x-lg;
+			}
+		}
+		.input-group-append,
+		.input-group-prepend{
+			> .btn,
+			>.input-group-text{
+				font-size: $textfield-font-size-lg;
+				padding:$input-group-outline-no-floating-padding-y-lg $input-group-outline-padding-x-lg;
+				height:$input-group-outline-inner-height-lg;
+			}
+		}
+		.pmd-textfield-floating-label {
+			label {
+				font-size: $textfield-font-size-lg;
+				@include transform-translateY(20px);
+			}
+			&.pmd-textfield-floating-label-completed {
+				label {
+					font-size: $textfield-floating-label-font-size-lg;
+				}
+			}
+		}
+	}
+}
+
+.pmd-input-group-filled{
+	.input-group-append,
+	.input-group-prepend{
+		.input-group-text {
+			border-top: none;
+			border-left: none;
+		}
+	}
+	&.pmd-input-group-icon{
+		.input-group-append,
+		.input-group-prepend{
+			position: absolute;
+			height: 100%;
+			z-index: 1;
+			.input-group-text {
+				background-color: transparent;
+				border: none;
+			}
+		}
+		.input-group-append{
+			right: 0;
+		}
+		.input-group-prepend{
+			&~.pmd-textfield-filled{
+				.custom-select, 
+				.form-control{
+					padding-left: 44px;
+				}
+				&.pmd-textfield-floating-label{
+					label{
+						padding-left: 44px;
+					}
+				}
+			}
+		}
+	}
+
+	&.input-group-sm{
+		.custom-select,
+		.form-control:not(textarea){
+			height:$input-group-outline-inner-height-sm;
+			padding:$input-group-outline-no-floating-padding-y-sm $input-group-outline-padding-x-sm;
+		}
+		.pmd-textfield-filled-wrapper{
+			.custom-select:not([placeholder]),
+			.form-control:not([placeholder]){
+				font-size: $textfield-font-size-sm;
+				padding:$input-group-outline-padding-y-sm $input-group-outline-padding-x-sm;
+			}
+		}
+		.input-group-append,
+		.input-group-prepend{
+			> .btn,
+			>.input-group-text{
+				font-size: $textfield-font-size-sm;
+				padding:$input-group-outline-no-floating-padding-y-sm $input-group-outline-padding-x-sm;
+			}
+		}
+		.pmd-textfield-floating-label {
+			label {
+				font-size: $textfield-font-size-sm; 
+				@include transform-translateY(7px);
+			}
+			&.pmd-textfield-floating-label-completed {
+				label {
+					font-size: $textfield-floating-label-font-size-sm;
+				}
+			}
+		}
+	}
+
+	&.input-group-lg{
+		.custom-select,
+		.form-control:not(textarea){
+			font-size: $textfield-font-size-lg;
+			height:$input-group-outline-inner-height-lg;
+			padding:$input-group-outline-no-floating-padding-y-lg $input-group-outline-padding-x-lg;
+		}
+		.pmd-textfield-outline-wrapper{
+			.custom-select:not([placeholder]),
+			.form-control:not([placeholder]){
+				padding:$input-group-outline-padding-y-lg $input-group-outline-padding-x-lg;
+			}
+		}
+		.input-group-append,
+		.input-group-prepend{
+			> .btn,
+			>.input-group-text{
+				font-size: $textfield-font-size-lg;
+				padding:$input-group-outline-no-floating-padding-y-lg $input-group-outline-padding-x-lg;
+				height:$input-group-outline-inner-height-lg;
+			}
+		}
+		.pmd-textfield-floating-label {
+			label {
+				font-size: $textfield-font-size-lg;
+				@include transform-translateY(20px);
+			}
+			&.pmd-textfield-floating-label-completed {
+				label {
+					font-size: $textfield-floating-label-font-size-lg;
+				}
+			}
+		}
+	}
+
+}
+.text-white {
+	.pmd-input-group{
+		.input-group-text{
+			color: $textfield-dark-color;
+		}
+	}
+	.pmd-input-group-outline{	
+		.input-group-text{
+			border-color: $textfield-dark-border-color;
+		}
+	}
+}

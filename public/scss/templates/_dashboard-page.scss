@@ -1,0 +1,265 @@
+// Analytics Section
+.analytics-section {
+	h2 {
+		font-family: $font-family-base;
+		font-weight: 600;
+	}
+	.analytics-sec-title {
+		h3 {
+			margin-bottom: 0;
+			@include media-breakpoint-down(sm) {
+				margin-bottom: $space16;
+			}
+		}
+		.react-cs-wrap {
+			width: 200px;
+			margin-bottom: 0;
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+				margin-bottom: $space16;
+			}
+			.react-cs__control {
+				border-radius:$border-radius;
+				font-size: $font-size-sm;
+				padding: $space4 $space8;
+				height: 40px;
+			}
+		}
+	}
+	.analytics-percentage {
+		font-size: $font-size-sm;
+		line-height: 1;
+		display: flex;
+		align-items: center;
+		margin-left: $space6;
+		font-weight: $font-weight-semibold;
+	}
+	.usage-timercounter {
+		margin-left: $space6;
+		font-weight: $font-weight-semibold;
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+	.pmd-btn-flat.btn-grey {
+		color: pmd-theme-color(disabled, dark);
+	}
+}
+
+
+// Subdomain and model card
+.pmd-card {
+    &.pmd-model-card {
+		cursor: pointer;
+		user-select: none;
+		.card-clickable {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: none;
+			border: none;
+		}
+		.pmd-card-dark.card-header {
+			padding-bottom: $card-spacer;
+			@include media-breakpoint-down(sm) {
+				padding-bottom: $card-spacer-sm;
+			}
+		}
+		.pmd-model-icon {
+			background: pmd-theme-color(dividers, light);
+			margin-left: $space16;
+			@include media-breakpoint-down(sm) {
+				width: 64px;
+				height: 64px;
+			}
+		}
+		.card-footer .pmd-btn-fab {
+			border: none;
+		}
+		@include hover {
+			.card-title, .card-body .card-text {
+				color: pmd-theme-color(primary, light);
+			}
+			.card-footer .pmd-btn-fab {
+				background: pmd-theme-color(primary, light);
+				box-shadow: $btn-raised-focus-box-shadow;
+			}
+		}
+	}
+	// Discover card
+	&.pmd-card-discover {
+		.pmd-card-dark.card-header {
+			background: $discover-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($discover-model-color, .12);
+			i { color: $discover-model-color; }
+		}
+		@include hover {
+			background: $discover-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($discover-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $discover-model-color; }
+			}
+		}
+	}
+	// Generate card
+	&.pmd-card-generate {
+		.pmd-card-dark.card-header {
+			background: $generate-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($generate-model-color, .12);
+			i { color: $generate-model-color; }
+		}
+		@include hover {
+			background: $generate-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($generate-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $generate-model-color; }
+			}
+		}
+	}
+	// Monitor card
+	&.pmd-card-monitor {
+		.pmd-card-dark.card-header {
+			background: $monitor-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($monitor-model-color, .12);
+			i { color: $monitor-model-color; }
+		}
+		@include hover {
+			background: $monitor-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($monitor-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $monitor-model-color; }
+			}
+		}
+	}
+	// Predict card
+	&.pmd-card-predict {
+		.pmd-card-dark.card-header {
+			background: $predict-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($predict-model-color, .12);
+			i { color: $predict-model-color; }
+		}
+		@include hover {
+			background: $predict-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($predict-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $predict-model-color; }
+			}
+		}
+	}
+	// Deploy card
+	&.pmd-card-deploy {
+		.pmd-card-dark.card-header {
+			background: $deploy-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($deploy-model-color, .12);
+			i { color: $deploy-model-color; }
+		}
+		@include hover {
+			background: $deploy-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($deploy-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $deploy-model-color; }
+			}
+		}
+	}
+	// History card
+	&.pmd-card-history {
+		.pmd-card-dark.card-header {
+			background: $history-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($history-model-color, .12);
+			i { color: $history-model-color; }
+		}
+		@include hover {
+			background: $history-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($history-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $history-model-color; }
+			}
+		}
+	}
+
+	// Tags card
+	&.pmd-card-tags {
+		.pmd-card-dark.card-header {
+			background: $tags-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($tags-model-color, .12);
+			i { color: $tags-model-color; }
+		}
+		@include hover {
+			background: $tags-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($tags-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $tags-model-color; }
+			}
+		}
+	}
+
+	// Tag and submit card
+	&.pmd-card-tagsubmit {
+		.pmd-card-dark.card-header {
+			background: $tagsubmit-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($tagsubmit-model-color, .12);
+			i { color: $tagsubmit-model-color; }
+		}
+		@include hover {
+			background: $tagsubmit-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($tagsubmit-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $tagsubmit-model-color; }
+			}
+		}
+	}
+
+	// Data prep card
+	&.pmd-card-dataprep {
+		.pmd-card-dark.card-header {
+			background: $dataprep-model-color;
+		}
+		.card-footer .pmd-btn-fab {
+			background: rgba($dataprep-model-color, .12);
+			i { color: $dataprep-model-color; }
+		}
+		@include hover {
+			background: $dataprep-model-color;
+			.pmd-card-dark.card-header {
+				background: darken($dataprep-model-color, 6%);
+			}
+			.card-footer .pmd-btn-fab {
+				i { color: $dataprep-model-color; }
+			}
+		}
+	}
+
+}

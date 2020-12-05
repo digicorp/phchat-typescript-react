@@ -1,0 +1,50 @@
+.pmd-tabs {
+    margin-bottom: $space30;
+    @include media-breakpoint-down(sm) {
+        margin-bottom: $space16;
+    }
+    .nav-tabs {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        .nav-item {
+            margin-right: $space30;
+            &:last-child {
+                margin-right: 0;
+            }
+            .nav-link {
+                cursor: pointer;
+                user-select: none;
+                padding: 0 0 $space12;
+                font-size: $font-size-sm;
+                font-weight: $font-weight-semibold;
+                text-transform: none;
+                @include transition;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 3px;
+                    background: $primary;
+                    @include transition;
+                    border-radius: $border-radius-50;
+                }
+                &.active, &:hover{
+                    color: $primary;
+                    @include transition;
+                    &:after {
+                        width: 100%;
+                        @include transition;
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-right: $space16;
+            }
+        }
+        
+    }
+}

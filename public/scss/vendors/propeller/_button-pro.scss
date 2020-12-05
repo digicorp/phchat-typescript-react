@@ -1,0 +1,140 @@
+.pmd-content {
+  margin-bottom: 200px;
+}
+
+/* Pill Button */
+.pmd-btn-pill{
+  @include border-radius(25px);
+}
+
+/* Button with side tooltip */
+.pmd-btn-tooltip{
+  display: inline-flex;
+  align-items: center;
+  span{
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+    position: relative;
+    background: $btn-tooltip-bg; 
+    margin-left: 10px;
+    color: $btn-tooltip-color;
+    &:after{
+      content: ""; 
+      position: absolute; 
+      width: 0; 
+      height: 0; 
+      border-top: 4px solid transparent; 
+      border-right: 8px solid $btn-tooltip-bg; 
+      border-bottom: 4px solid transparent; 
+      right: 100%; 
+      top: 50%; 
+      @include transform-translateY(-50%);
+    }
+  }
+  /* Left tooltip */
+  &.pmd-btn-tooltip-left{
+    span{
+      margin-left: 0; 
+      margin-right: 10px;
+      &:after{
+        border-top: 4px solid transparent; 
+        border-left: 8px solid $btn-tooltip-bg;
+        border-bottom: 4px solid transparent; 
+        right: auto; 
+        left: 100%; 
+        border-right: 0;
+      }
+    }
+  }
+}
+
+/* Button with Icon */
+.pmd-btn-icon{
+  display: inline-flex; 
+  align-items: center;
+  i,
+  .material-icons{
+    margin-right: $btn-icon-margin-right;
+  }
+  /* Reveal icon on submit button */
+  &.pmd-btn-check{
+    i,
+    .material-icons{
+      opacity: 0; 
+      width: 0; 
+      margin-right: 0; 
+      @include transition($btn-check-transition);
+      @include transform-scale-rotate($btn-check-scale-before, $btn-check-rotate-before);
+    }
+    &.active{
+      i,
+      .material-icons{
+        opacity: 1; 
+        width: auto; 
+        margin-right: 8px; 
+        @include transform-scale-rotate($btn-check-scale-after, $btn-check-rotate-after);
+      } 
+    }
+  }
+}
+
+/* Button with Gradient */
+.btn{
+  &.pmd-btn-gradient {
+    @include linear-gradient-button($btn-gradient);
+    line-height: $btn-gradient-line-height;
+  }
+  &.pmd-btn-gradient-vertical{ 
+    @include linear-gradient-button($btn-gradient-vertical);
+    line-height: $btn-gradient-line-height;
+  }
+  &.pmd-btn-gradient-diagonal{
+    @include linear-gradient-button($btn-gradient-diagonal);
+    line-height: $btn-gradient-line-height;
+  }
+  &.pmd-btn-gradient-diagonal-reverse{
+    @include linear-gradient-button($btn-diagonal-reverse);
+    line-height: $btn-gradient-line-height;
+  }
+  &.pmd-btn-gradient-radial{
+    @include radial-gradient-button($btn-gradient-radial);
+    line-height: $btn-gradient-line-height;
+  }
+}
+
+/* Button Loader Animation */
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes scale {
+  0% { -webkit-transform: scale(0); }
+  100% { -webkit-transform: scale(1); }
+}
+
+@keyframes scale {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+.pmd-btn-loader{position: relative;}
+.pmd-btn-loader.active{background-color: transparent !important; border: 0; color: transparent !important; box-shadow: none !important;}
+.pmd-loader-text-visible{display: none;}
+.pmd-btn-loader .loader{opacity: 0; position: absolute; width: 100%; left: 0; right: 0; top: 0; bottom: 0; border: 4px solid #20c997 !important; border-radius: 50%; border-top: 4px solid rgba(32, 201, 151, 0.5) !important; min-width: 50px; background-color: transparent !important; box-shadow: none !important; color: transparent !important; min-width: 100px; margin: 0;}
+.pmd-btn-loader.active .loader{width: 50px; min-width: 50px; height: 50px; left: 50%; margin-left: -25px; opacity: 1; -webkit-animation: spin 1.2s linear infinite; animation: spin 1.2s linear infinite; animation-iteration-count: 3; animation-delay: 0.35s;}
+.pmd-btn-loader.active.completed .loader{opacity: 0;}
+
+.pmd-btn-loader.completed .pmd-loader-text-default{display: none;}
+.pmd-btn-loader.completed .pmd-loader-text-visible{display: inline-flex;}
+.pmd-btn-loader.completed .pmd-loader-text-visible .material-icons{-webkit-animation: scale 0.3s linear; animation: scale 0.3s linear;}
+.pmd-btn-loader .loader, .pmd-btn-loader{
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}

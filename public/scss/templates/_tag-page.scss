@@ -1,0 +1,17 @@
+//Subdomain listing page
+.tags-list-item {
+    .tags-actions {
+        margin-left: $space16;
+        opacity: 0;
+        @include transition($transition-base);
+        @include media-breakpoint-down(md) {
+            opacity: 1;
+        }
+    }
+    &:hover {
+        .tags-actions {
+            opacity: 1;
+            @include transition($transition-base);
+        }
+    }
+}

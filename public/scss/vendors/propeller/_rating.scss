@@ -1,0 +1,54 @@
+/* Rate Block */
+.pmd-rate-inner {
+	min-width: 60px;
+	padding: 32px 0;
+	font-weight: 500;
+	font-style: normal;
+}
+.rating {
+	margin: 0;
+	img {
+		height: auto;
+		width: $pmd-rating-img-size;
+		display: inline-block;
+	}
+}
+
+/* Stars */
+.starOn, .starOff, .starHalf, .cancelOff, .cancelOn {
+	display: inline-block;
+	&:after {
+		font-size: $pmd-rating-icon-size;
+	}
+}
+
+.starOn{
+	&:after {
+		content: "\E838";
+		color:$pmd-rating-starOn;
+	}
+}
+.starOff{
+	&:after {
+		content: "\E83A";
+		color:$pmd-rating-staroff;
+	}
+}
+.starHalf{
+	&:after {
+		content: "\E839";
+		color:$pmd-rating-starHalf;
+	}
+}
+.cancelOff{
+	&:after {
+		content: "\E888";
+		color:$pmd-rating-cancelOff;
+	}
+}
+.cancelOn{
+	&:after {
+		content: "\E888";
+		color:$pmd-rating-cancelOn;
+	}
+}

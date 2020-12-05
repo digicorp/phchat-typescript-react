@@ -1,0 +1,141 @@
+.pmd-navbar {
+    &.navbar {
+        @include media-breakpoint-down(sm) {
+            padding: 0 $space8;
+        }
+        .navbar-brand{
+            width: 246px;
+            @include media-breakpoint-down(md) {
+                width: auto;          
+            }
+            @include media-breakpoint-down(sm) {
+                margin-right: $space8;
+                img {
+                    width: 54px;
+                }
+            }
+            
+        }
+        .navbar-right {
+            .nav-item {
+                border-right: solid $border-width $border-inverse-color;
+                padding: 0 $space16;
+                @include media-breakpoint-down(sm) {
+                    padding: 0 $space8;
+                }
+                &:last-child {
+                    border-right: none;
+                    padding-right: 0;
+                }
+
+                .nav-selectfield {
+                    margin: 0;
+                    width: 160px;
+                    @include media-breakpoint-down(sm) {
+                        width: 120px;
+                    }
+
+                    // React Select
+                    .react-cs {
+                        .react-cs__control {
+                            border-radius:$border-radius;
+                            font-size: $font-size-sm;
+                            color: pmd-theme-color(primary, light);
+                            border-width: $border-width-2;
+                            border-color: pmd-theme-color(dividers, light);
+                            padding: $space4 $space8;
+                            height: 40px;
+                            background: none;
+                            &.react-cs__control--is-focused {
+                                border-color: $bg-primary;
+                                box-shadow: $no-shadow;
+                            }
+                            .react-cs__single-value {
+                                color: pmd-theme-color(primary, light);
+                            }
+                            .react-cs__placeholder, .react-cs__single-value {
+                                @include media-breakpoint-down(sm) {
+                                    font-size: 12px;
+                                }
+                            }
+                            .react-cs__value-container {
+                                overflow: hidden;
+                            }
+                            .react-cs__value-container, .react-cs__dropdown-indicator {
+                                padding: 0;
+                            }
+                            .react-cs__dropdown-indicator {
+                                @include media-breakpoint-down(sm) {
+                                    svg {
+                                        width: 14px;
+                                    }
+                                }
+                            }
+                            .react-cs__indicator-separator {
+                                display: none;
+                            }
+                        }
+                    }
+                    &.is-invalid {
+                        .react-cs {
+                            .react-cs__control {
+                                border-color:theme-color("danger");
+                            }
+                        }
+                        .invalid-feedback {
+                            display: block;
+                        }
+                    }
+                    .react-cs__menu-list {
+                        max-height: 200px;
+                        &::-webkit-scrollbar-track {
+                            border-radius: $sidebar-scrollbar-border-radius;
+                        }
+                        &::-webkit-scrollbar-track {
+                            border-radius: $sidebar-scrollbar-border-radius;
+                        }
+                        &::-webkit-scrollbar {
+                            width: $sidebar-scrollbar-width;
+                            background-color:$sidebar-scrollbar-bg;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: $sidebar-scrollbar-thumb-border-radius;
+                            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                            background-color:$sidebar-scrollbar-thumb-bg;
+                        }
+
+                        .react-cs__option {
+                            font-size: $font-size-sm;
+                            color: $body-color;
+                            &.react-cs__option--is-focused {
+                                background: $primary-light;
+                                color: $primary;
+                            }
+                            &.react-cs__option--is-selected {
+                                background: pmd-theme-color(hover, dark);
+                                color: $body-color;
+                                &.react-cs__option--is-focused {
+                                    background: $primary-light;
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pmd-user-info{
+    .btn{
+        text-transform:inherit;
+        padding: 0;
+        border: none;
+        p{
+            font-size: $font-size-sm;
+            color: pmd-theme-color(primary, light);
+            font-weight: $font-weight-normal;
+        }
+    }
+}

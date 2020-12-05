@@ -1,0 +1,121 @@
+/*!
+ * Propeller Pro v1.6.0 (http://pro.propeller.in/): spinners.css
+ * Copyright 2016-2020 Digicorp Information Systems Pvt. Ltd.
+ * This software is covered by Propeller Pro Plan 1 License (License.txt)
+ * Usage without proper license is prohibited.
+ */
+
+.spinner-border {
+	width: $spinner-size;
+	height: $spinner-size;
+}
+.pmd-spinner {
+	border: none;
+    color: $spinner-border-color;
+    mask-image: linear-gradient(transparent 50%, black 50%), linear-gradient(to right, transparent 50%, black 50%);
+	animation: pmd-spinner 6s infinite cubic-bezier(0.3, 0.6, 1, 1);
+	&:before {
+		content: "";
+		display: block;
+		border: solid $spinner-border-size transparent;
+		border-top-color: currentColor;
+		border-radius: 50%;
+		width: 100% !important;
+		height: 100%;
+		animation: pmd-spinner-pseudo 0.75s infinite linear alternate;
+	}
+}
+
+@keyframes pmd-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    12.5% {
+        transform: rotate(180deg);
+        animation-timing-function: linear;
+    }
+    25% {
+        transform: rotate(630deg);
+    }
+    37.5% {
+        transform: rotate(810deg);
+        animation-timing-function: linear;
+    }
+    50% {
+        transform: rotate(1260deg);
+    }
+    62.5% {
+        transform: rotate(1440deg);
+        animation-timing-function: linear;
+    }
+    75% {
+        transform: rotate(1890deg);
+    }
+    87.5% {
+        transform: rotate(2070deg);
+        animation-timing-function: linear;
+    }
+    100% {
+        transform: rotate(2520deg);
+    }
+}
+
+@keyframes pmd-spinner-pseudo {
+    0% {
+        transform: rotate(-30deg);
+    }
+    29.4% {
+        border-left-color: transparent;
+    }
+    29.41% {
+        border-left-color: currentColor;
+    }
+    64.7% {
+        border-bottom-color: transparent;
+    }
+    64.71% {
+        border-bottom-color: currentColor;
+    }
+    100% {
+        border-left-color: currentColor;
+        border-bottom-color: currentColor;
+        transform: rotate(225deg);
+    }
+}
+
+.spinner-border-sm {
+	width: $spinner-sm-size;
+	height: $spinner-sm-size; 
+	&:before {
+		border-width: $spinner-sm-border-size;
+	}
+}
+
+.pmd-logo-spinner {
+    // background-color: $spinner-wrapper-bg;
+    // box-shadow: $spinner-wrapper-shadow;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $spinner-wrapper-size;
+    height: $spinner-wrapper-size;
+    position: relative;
+    svg, i, img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: auto;
+        width: $spinner-logo-size;
+        height: $spinner-logo-size;
+    }
+    .pmd-spinner{
+        width: $logo-spinner-size;
+        height: $logo-spinner-size;
+        &:before {
+            border-width: $logo-spinner-border-size;
+        }
+    }
+}

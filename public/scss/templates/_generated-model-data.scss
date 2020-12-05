@@ -1,0 +1,43 @@
+// Progress bar
+.pmd-progress-list{
+    .progress{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        z-index: 0;
+        background-color:transparent;
+        opacity: 0.09;
+    }
+    .progress-content{
+        display: flex;
+        position: relative;
+        line-height: 1;
+        align-items: center;
+        .list-group-item-heading,
+        .list-group-item-text{
+            margin-bottom:0;
+        }
+        .media-obj-image {
+            margin-right: $space16;
+        }
+        .list-options {
+            margin-left: $space16;
+        }
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            .media-obj-image {
+                margin-right: 0;
+                margin-bottom: $space16;
+            }
+            .list-options {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+}

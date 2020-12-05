@@ -1,0 +1,19 @@
+@import "vendors/propeller/functions.scss";
+@import "variables";
+
+// libraries
+@import "base/fonts";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "vendors/propeller/propeller.scss";
+
+// components
+@import "utils/utils";
+
+// Propeller Theme
+@import "base/reboot";
+@import "components/components";
+@import "templates/templates";
+
+// @import "~react-toastify/dist/ReactToastify.css";
+@import "~react-toastify/scss/main.scss";
+// @import '~@availity/reactstrap-validation-select/styles.scss';

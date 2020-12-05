@@ -1,0 +1,51 @@
+/*!
+ * Propeller Pro v1.4.1 (http://pro.propeller.in/): contact-sections.css
+ * Copyright 2016-2019 Digicorp Information Systems Pvt. Ltd.
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+.section-inverse{color: rgba(255,0255,255,0.78);}
+.pmd-contact-us h4{margin-top: 16px; border-bottom: 2px solid rgba(255,255,255,0.34); display: inline-block; padding-bottom: 2px;}
+.pmd-contact-us textarea{resize: none;}
+.section-inverse{color: rgba(255,255,255,0.85);}
+.section-inverse .primary{color: rgba(255,255,255,0.9);}
+.section-inverse .secondary{color: rgba(255,255,255,0.7);}
+.section-inverse .text-muted, .section-inverse .hint, .section-inverse .disabled, .section-inverse .icon{color: rgba(255,255,255,0.4);}
+.section-inverse .hover{color: rgba(255,255,255,0.38);}
+.section-inverse .divider{color: rgba(255,255,255,0.12);}
+.section-inverse .site-info{color: rgba(255,255,255,0.38);}
+.section-inverse .site-info a{color: rgba(255,255,255,0.8);}
+.section-inverse .site-info strong{color: rgba(255,255,255,1);}
+.section-inverse .footer-menu li a{color: rgba(255,255,255,0.7);}
+.section-inverse .footer-menu li a:hover{color: rgba(255,255,255,0.9);}
+.section-inverse .content-hover-effect li a:after{background-color: rgba(255,255,255,0.9);}
+.section-inverse .side-line-effect li{border-color: rgba(255,255,255,0.2);}
+.section-inverse .border-right{border-color: rgba(255,255,255,0.3) !important;}
+.section-inverse label{color: rgba(255,255,255,0.7);}
+.section-inverse .pmd-textfield-floating-label.pmd-textfield-floating-label-completed label{color: rgba(255,255,255,0.7);}
+.section-inverse .form-control{color: rgba(255,255,255,0.8);}
+.section-inverse .pmd-textfield .form-control{border-bottom: solid 1px rgba(255,255,255,.12)}
+.section-inverse.section.border-bottom, .section-inverse .border-bottom, .section-inverse hr{border-color: rgba(255,255,255,.1) !important;}
+.section-inverse .pmd-list-subtitle{color: rgba(255,255,255,0.5);}
+.section-inverse .pmd-list-title, .section-inverse .media a, .section-inverse p a{color: rgba(255,255,255,0.8);}
+
+.section-inverse .social-icons .btn .material-icons svg{fill: rgba(255,255,255,0.5);}
+.section-inverse .social-icons .btn:hover .material-icons svg{fill: rgba(255,255,255,0.9);}
+.section-inverse .social-icons .btn-light.btn .material-icons svg{fill: rgba(0,0,0,0.5);}
+.section-inverse .social-icons .btn-light.btn:hover .material-icons svg{fill: rgba(0,0,0,0.9);}
+
+.pmd-word-break{word-break: break-word;}
+
+/* Media Queries */
+@media (max-width: 1200px) { 
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px){
+	.pmd-contact-us h4{margin-top: 8px;}
+
+	.sm-mb-4{margin-bottom: 40px;}
+}
+@media (max-width: 575px){
+}

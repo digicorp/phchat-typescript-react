@@ -1,0 +1,18 @@
+h3, .h3 {
+    font-weight: $h3-font-weight;
+}
+h5, .h5 {
+    font-weight: $h5-font-weight;
+}
+.pmd-display3 {
+    @include media-breakpoint-down(sm) {
+        font-size: $display3-mobile-font-size;
+        line-height: $display3-mobile-line-height;
+    }
+}
+@include media-breakpoint-down(sm) {
+    h1, .h1 { font-size: $h1-mobile-font-size;}
+    h2, .h2 { font-size: $h2-mobile-font-size;}
+    h3, .h3 { font-size: $h3-mobile-font-size;}
+    .display-4 { font-size: $display4-mobile-font-size;}
+}
