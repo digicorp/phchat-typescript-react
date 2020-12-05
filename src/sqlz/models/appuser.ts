@@ -7,6 +7,7 @@ export class AppUser extends Model {}
 export class AppUserModel {
   id: string
   name: string
+  image: string
   email: string
   pwd: string
   createdAt: Date
@@ -16,6 +17,7 @@ export class AppUserModel {
 AppUser.init(
   {
     name: STRING(50),
+    image: STRING(50),
     email: STRING(50),
     pwd: STRING(50)
   },

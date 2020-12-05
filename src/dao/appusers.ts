@@ -11,6 +11,15 @@ export function create(appUser: any): Promise<any> {
   })
 }
 
+export function update(appuser: any): Promise<any> {
+  return AppUser.update(
+    {
+      image: appuser.image
+    },
+    { where: { id: appuser.id } }
+  )
+}
+
 export function findAll(): Promise<any> {
   return AppUser.findAll({ include: [{ all: true }] })
 }

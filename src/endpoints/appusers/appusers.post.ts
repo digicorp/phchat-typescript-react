@@ -36,6 +36,9 @@ export function upload(req: Request, res: Response) {
       console.log('perc :>> ', (bytesRecieved * 100) / bytesExpected)
     })
 
+    const { headers: { id = '' } = {} } = req
+    if (!id) return res.boom.badRequest('FAILED:>> INVALID_USER_ID')
+
     form.parse(req, function (err, fields, files) {
       if (err) {
         return res.boom.badRequest(err)
@@ -57,7 +60,12 @@ export function upload(req: Request, res: Response) {
         const dataLinkUrl = `${req.protocol}://${req.get(
           'host'
         )}/${newFileName}`
-        return res.status(201).send({ image: encodeURI(dataLinkUrl) })
+
+        return AppUserDao.update({ id, image: dataLinkUrl })
+          .then(() => res.status(201).send({ image: encodeURI(dataLinkUrl) }))
+          .catch((error) => res.boom.badRequest(error))
+
+        // return res.status(201).send({ image: encodeURI(dataLinkUrl) })
       })
     })
   } catch (error) {
